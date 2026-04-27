@@ -801,8 +801,8 @@
       position: fixed;
       right: 22px;
       bottom: 162px;
-      width: min(390px, calc(100vw - 32px));
-      height: 540px;
+      width: min(460px, calc(100vw - 32px));
+      height: 620px;
       z-index: 130;
       display: none;
       flex-direction: column;
@@ -816,6 +816,31 @@
 
     .ai-chat-window.open {
       display: flex;
+    }
+
+    .ai-chat-banner {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      margin: 0 16px 12px;
+      border-radius: 18px;
+      background: rgba(6, 182, 212, .08);
+      border: 1px solid rgba(6, 182, 212, .18);
+    }
+
+    .ai-chat-banner strong {
+      display: block;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .ai-chat-banner p {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.4;
+      margin: 0;
     }
 
     .ai-chat-header {
@@ -1439,7 +1464,7 @@
   </main>
 
   <button class="ai-chat-button" onclick="toggleAiChat()" aria-label="Abrir assistente virtual NEXA">
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=120&q=80" alt="Avatar da NEXA" />
+    <img src="1c7c2291-c549-4faf-99d5-883b03606545.png" alt="Avatar da NEXA" />
   </button>
 
   <div class="ai-chat-window" id="aiChatWindow">
@@ -1454,6 +1479,16 @@
         </div>
       </div>
       <button class="ai-chat-close" onclick="toggleAiChat()" aria-label="Fechar assistente">×</button>
+    </div>
+
+    <div class="ai-chat-banner">
+      <div class="ai-chat-avatar">
+        <img src="1c7c2291-c549-4faf-99d5-883b03606545.png" alt="NEXA IA" />
+      </div>
+      <div>
+        <strong>NEXA está pronta para te ajudar</strong>
+        <p>Ela entende operações, identifica falhas e orienta com sugestões práticas de TI.</p>
+      </div>
     </div>
 
     <div class="ai-chat-messages" id="aiChatMessages">
