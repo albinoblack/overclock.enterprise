@@ -873,7 +873,209 @@
       color: var(--text-secondary);
       font-size: 0.9rem;
     }
-  </style>
+
+    .ai-chat-button {
+    position: fixed;
+    right: 24px;
+    bottom: 92px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 0 24px rgba(6,182,212,.35);
+    z-index: 120;
+    cursor: pointer;
+    font-size: 1.35rem;
+  }
+
+  .ai-chat-window {
+    position: fixed;
+    right: 24px;
+    bottom: 160px;
+    width: min(380px, calc(100vw - 32px));
+    height: 520px;
+    background: rgba(2, 6, 23, .96);
+    border: 1px solid rgba(226,232,240,.12);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45), 0 0 30px rgba(59,130,246,.18);
+    z-index: 121;
+    display: none;
+    overflow: hidden;
+    backdrop-filter: blur(14px);
+  }
+
+  .ai-chat-window.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-chat-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(226,232,240,.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ai-chat-header strong {
+    color: #e2e8f0;
+  }
+
+  .ai-chat-header span {
+    display: block;
+    color: #94a3b8;
+    font-size: .82rem;
+  }
+
+  .ai-chat-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .ai-chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ai-msg {
+    padding: 12px 14px;
+    border-radius: 14px;
+    font-size: .92rem;
+    line-height: 1.45;
+    max-width: 85%;
+    white-space: pre-wrap;
+  }
+
+  .ai-msg.bot {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(226,232,240,.10);
+    color: #e2e8f0;
+    align-self: flex-start;
+  }
+
+  .ai-msg.user {
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: #fff;
+    align-self: flex-end;
+  }
+
+  .ai-chat-form {
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid rgba(226,232,240,.12);
+  }
+
+  .ai-chat-input {
+    flex: 1;
+    border: 1px solid rgba(226,232,240,.12);
+    background: rgba(255,255,255,.06);
+    color: #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    outline: none;
+  }
+
+  .ai-chat-send {
+    border: none;
+    border-radius: 10px;
+    padding: 0 16px;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+  }
+
+</style>
+<button class="ai-chat-button" onclick="toggleAiChat()" aria-label="Abrir assistente virtual">
+  <i class="fa-solid fa-robot"></i>
+</button>
+
+<div class="ai-chat-window" id="aiChatWindow">
+  <div class="ai-chat-header">
+    <div>
+      <strong>Assistente Overclock</strong>
+      <span>Diagnóstico inicial de TI</span>
+    </div>
+    <button class="ai-chat-close" onclick="toggleAiChat()">×</button>
+  </div>
+
+  <div class="ai-chat-messages" id="aiChatMessages">
+    <div class="ai-msg bot">
+      Olá! Sou a assistente da Overclock Enterprise. Posso te ajudar a entender se sua empresa precisa de sistema, automação, site, organização digital ou infraestrutura.
+    </div>
+  </div>
+
+  <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
+    <input
+      class="ai-chat-input"
+      id="aiChatInput"
+      type="text"
+      placeholder="Descreva o que sua empresa precisa..."
+      autocomplete="off"
+    />
+    <button class="ai-chat-send" type="submit">
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
+  </form>
+</div>
+
+<script>
+  function toggleAiChat() {
+    document.getElementById("aiChatWindow").classList.toggle("open");
+  }
+
+  function addAiMessage(text, sender) {
+    const messages = document.getElementById("aiChatMessages");
+    const div = document.createElement("div");
+    div.className = "ai-msg " + sender;
+    div.textContent = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+
+  async function sendAiMessage(event) {
+    event.preventDefault();
+
+    const input = document.getElementById("aiChatInput");
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    addAiMessage(message, "user");
+    input.value = "";
+
+    const loading = addAiMessage("Analisando sua necessidade...", "bot");
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+
+      loading.textContent = data.answer || data.error || "Não consegui responder agora.";
+    } catch (error) {
+      loading.textContent = "Erro ao conectar com a assistente. Tente novamente em instantes.";
+    }
+  }
+</script>
+
 </head>
 <body>
   <header class="header">
