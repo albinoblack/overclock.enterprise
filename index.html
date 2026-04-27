@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Overclock Enterprise | Estrutura Tecnológica para Empresas</title>
   <meta name="description" content="A Overclock Enterprise desenvolve sistemas, automatiza processos e implementa infraestrutura para transformar operações desorganizadas em negócios eficientes, seguros e escaláveis.">
+  <meta property="og:title" content="Overclock Enterprise | Estrutura Tecnológica para Empresas">
+  <meta property="og:description" content="Sistemas, automação e infraestrutura para transformar sua operação digital. Do diagnóstico à sustentação.">
+  <meta property="og:url" content="https://overclock-enterprise.vercel.app">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Overclock Enterprise | Estrutura Tecnológica para Empresas">
+  <meta name="twitter:description" content="Implementamos sistemas, automações e infraestrutura. Não apenas recomendamos.">
   <meta name="keywords" content="consultoria TI, desenvolvimento de sistemas, infraestrutura, automação, organização digital, sustentação técnica">
   <meta name="theme-color" content="#020617">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -667,48 +674,60 @@
       text-shadow: 0 0 10px var(--glow-blue-light);
     }
 
-    .faq-grid {
+    .faq-accordion {
       max-width: 800px;
       margin: 0 auto;
     }
 
-    details {
+    .accordion-item {
       border-top: 1px solid var(--border);
+    }
+
+    .accordion-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
       padding: 24px 0;
-    }
-
-    details:last-child { border-bottom: 1px solid var(--border); }
-
-    summary {
-      list-style: none;
       cursor: pointer;
-      font-weight: 600;
-      position: relative;
-      padding-right: 30px;
-      color: var(--text-primary);
       font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
     }
 
-    summary::-webkit-details-marker { display: none; }
-
-    summary::after {
-      content: "+";
-      position: absolute;
-      top: 0;
-      right: 0;
+    .accordion-header:hover {
       color: var(--blue-light);
-      font-size: 1.3rem;
-      line-height: 1;
+    }
+
+    .accordion-header i {
+      color: var(--blue-light);
       transition: var(--transition);
       text-shadow: 0 0 10px var(--glow-blue-light);
     }
 
-    details[open] summary::after { content: "-"; }
+    .accordion-header.active i {
+      transform: rotate(180deg);
+    }
 
-    .details-content {
-      margin-top: 12px;
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
       color: var(--text-secondary);
       line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .accordion-content.open {
+      max-height: 200px;
     }
 
     footer {
@@ -800,6 +819,60 @@
       .tech-dashboard { height: 350px; }
       .floating-elements { display: none; }
     }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(59, 130, 246, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-content {
+      margin-bottom: 24px;
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .testimonial-content::before {
+      content: '"';
+      font-size: 3rem;
+      color: var(--blue-light);
+      position: absolute;
+      top: -10px;
+      left: -20px;
+      opacity: 0.3;
+    }
+
+    .testimonial-author strong {
+      display: block;
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .testimonial-author span {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -835,19 +908,19 @@
           </div>
           <div class="dashboard-grid">
             <div class="dashboard-metric">
-              <div class="metric-value">87%</div>
+              <div class="metric-value" data-target="87" data-suffix="%">0%</div>
               <div class="metric-label">Processos automatizados</div>
             </div>
             <div class="dashboard-metric">
-              <div class="metric-value">94%</div>
+              <div class="metric-value" data-target="94" data-suffix="%">0%</div>
               <div class="metric-label">Dados centralizados</div>
             </div>
             <div class="dashboard-metric">
-              <div class="metric-value">99.9%</div>
+              <div class="metric-value" data-target="99.9" data-suffix="%" data-decimal="1">0%</div>
               <div class="metric-label">Infraestrutura monitorada</div>
             </div>
             <div class="dashboard-metric">
-              <div class="metric-value">100%</div>
+              <div class="metric-value" data-target="100" data-suffix="%">0%</div>
               <div class="metric-label">Fluxos integrados</div>
             </div>
           </div>
@@ -856,6 +929,11 @@
               <span></span>
             </div>
           </div>
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+            alt="Circuito de computador representando infraestrutura tecnológica"
+            style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); opacity:0.4; margin-top:12px;"
+          >
         </div>
       </div>
     </div>
@@ -918,31 +996,37 @@
       </div>
       <div class="services-grid">
         <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&q=80" alt="Desenvolvimento de Sistemas" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
           <i class="fa-solid fa-code"></i>
           <h3>Desenvolvimento de Sistemas</h3>
           <p>Sistemas web, ERPs, dashboards e APIs para centralizar e controlar operação.</p>
         </article>
         <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&q=80" alt="Automação de Processos" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
           <i class="fa-solid fa-robot"></i>
           <h3>Automação de Processos</h3>
           <p>Fluxos automatizados que eliminam tarefas manuais e reduzem falhas.</p>
         </article>
         <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80" alt="Infraestrutura e DevOps" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
           <i class="fa-solid fa-cogs"></i>
           <h3>Infraestrutura e DevOps</h3>
           <p>Ambientes estáveis, monitorados, com deploy estruturado e segurança.</p>
         </article>
         <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80" alt="Organização Digital" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
           <i class="fa-solid fa-folder-tree"></i>
           <h3>Organização Digital</h3>
           <p>Estruturação de processos, arquivos e operação digital.</p>
         </article>
         <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" alt="Sites e Aplicações Web" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
           <i class="fa-solid fa-globe"></i>
           <h3>Sites e Aplicações Web</h3>
           <p>Presença digital profissional com performance e credibilidade.</p>
         </article>
         <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80" alt="Suporte Contínuo" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
           <i class="fa-solid fa-tools"></i>
           <h3>Suporte Contínuo</h3>
           <p>Manutenção, evolução e estabilidade da operação.</p>
@@ -958,19 +1042,29 @@
       </div>
       <div class="comparison reveal">
         <div class="comparison-col">
-          <h3>Consultorias</h3>
+          <h3>Abordagem Tradicional</h3>
           <ul>
-            <li>Diagnóstico</li>
-            <li>Recomendação</li>
-            <li>Dependência externa</li>
+            <li>Diagnóstico superficial</li>
+            <li>Recomendações genéricas</li>
+            <li>Dependência de terceiros</li>
+            <li>Implementação manual</li>
+            <li>Suporte limitado</li>
+            <li>Custos recorrentes altos</li>
+            <li>Riscos de falhas operacionais</li>
+            <li>Falta de monitoramento</li>
           </ul>
         </div>
         <div class="comparison-col">
           <h3>Overclock Enterprise</h3>
           <ul>
-            <li>Implementação</li>
-            <li>Automação real</li>
-            <li>Sustentação contínua</li>
+            <li>Análise técnica profunda</li>
+            <li>Soluções personalizadas</li>
+            <li>Implementação completa</li>
+            <li>Automação inteligente</li>
+            <li>Suporte técnico contínuo</li>
+            <li>Otimização de custos</li>
+            <li>Infraestrutura resiliente</li>
+            <li>Monitoramento 24/7</li>
           </ul>
         </div>
       </div>
@@ -1061,7 +1155,11 @@
       <div class="cta-panel reveal">
         <h2>Antes de contratar mais ferramentas, entenda onde sua operação perde eficiência.</h2>
         <p>Um diagnóstico técnico mostra quais processos podem ser automatizados, quais dados precisam ser centralizados e quais sistemas realmente fazem sentido.</p>
-        <a class="btn btn-whatsapp" href="https://wa.me/5512999999999">Solicitar diagnóstico técnico</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/5512997570377">Solicitar diagnóstico técnico</a>
+        <a class="btn btn-email" href="mailto:overclockboost@gmail.com" style="margin-top:12px;">
+          <i class="fa-solid fa-envelope"></i>
+          Prefere e-mail? Fale por aqui
+        </a>
       </div>
     </div>
   </section>
@@ -1101,43 +1199,61 @@
       <div class="section-header reveal">
         <h2>Perguntas frequentes</h2>
       </div>
-      <div class="faq-grid reveal">
-        <details>
-          <summary>A Overclock Enterprise cria apenas sites?</summary>
-          <div class="details-content">
+      <div class="faq-accordion reveal">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>A Overclock Enterprise cria apenas sites?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
             <p>Não. Sites são apenas uma das frentes. Atuamos com sistemas, automações, infraestrutura, organização digital, suporte técnico e evolução contínua.</p>
           </div>
-        </details>
-        <details>
-          <summary>Vocês desenvolvem sistemas sob medida?</summary>
-          <div class="details-content">
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Vocês desenvolvem sistemas sob medida?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
             <p>Sim. Avaliamos a necessidade da empresa e desenvolvemos soluções sob medida, como sistemas internos, ERPs, dashboards, APIs e integrações.</p>
           </div>
-        </details>
-        <details>
-          <summary>Minha empresa é pequena. Faz sentido contratar?</summary>
-          <div class="details-content">
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Minha empresa é pequena. Faz sentido contratar?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
             <p>Sim, principalmente se a operação já depende de planilhas, WhatsApp, tarefas manuais ou ferramentas desconectadas. A estrutura pode começar pequena e evoluir por etapas.</p>
           </div>
-        </details>
-        <details>
-          <summary>Vocês oferecem manutenção mensal?</summary>
-          <div class="details-content">
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Vocês oferecem manutenção mensal?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
             <p>Sim. Além de projetos pontuais, podemos atuar com suporte recorrente, manutenção, melhorias, monitoramento e evolução técnica.</p>
           </div>
-        </details>
-        <details>
-          <summary>Preciso ter uma equipe de TI interna?</summary>
-          <div class="details-content">
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Preciso ter uma equipe de TI interna?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
             <p>Não. Podemos atuar como apoio técnico externo para empresas que ainda não possuem equipe interna ou que precisam complementar sua capacidade técnica.</p>
           </div>
-        </details>
-        <details>
-          <summary>Vocês trabalham com infraestrutura e DevOps?</summary>
-          <div class="details-content">
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Vocês trabalham com infraestrutura e DevOps?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
             <p>Sim. Atuamos com ambientes de aplicação, deploy, containers, CI/CD, monitoramento, backups e boas práticas para operação estável.</p>
           </div>
-        </details>
+        </div>
       </div>
     </div>
   </section>
@@ -1147,7 +1263,48 @@
       <div class="cta-panel reveal">
         <h2>Pronto para transformar improviso em estrutura tecnológica?</h2>
         <p>Fale com a Overclock Enterprise e descubra como sistemas, automações e infraestrutura podem tornar sua empresa mais eficiente, segura e escalável.</p>
-        <a class="btn btn-whatsapp" href="https://wa.me/5512999999999">Falar com a Overclock Enterprise</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/5512997570377">Falar com a Overclock Enterprise</a>
+        <a class="btn btn-email" href="mailto:overclockboost@gmail.com" style="margin-top:12px;">
+          <i class="fa-solid fa-envelope"></i>
+          Prefere e-mail? Fale por aqui
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="social-proof" class="section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Empresas que confiam na nossa expertise</h2>
+      </div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"A Overclock transformou completamente nossa operação logística. Antes tínhamos processos manuais que levavam dias, agora tudo é automatizado e monitorado em tempo real."</p>
+          </div>
+          <div class="testimonial-author">
+            <strong>Carlos Mendes</strong>
+            <span>Diretor de Operações, LogiTrans</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Implementaram um sistema ERP personalizado que se integrou perfeitamente com nossos processos existentes. O suporte técnico é excepcional."</p>
+          </div>
+          <div class="testimonial-author">
+            <strong>Ana Silva</strong>
+            <span>CEO, TechSolutions</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Desde que contratamos a Overclock, nossa produtividade aumentou 40% e os erros operacionais praticamente zeraram. Recomendo fortemente."</p>
+          </div>
+          <div class="testimonial-author">
+            <strong>Roberto Santos</strong>
+            <span>Gerente de TI, Indústria Brasil</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1167,8 +1324,8 @@
       </div>
       <div class="footer-col">
         <h3>Contato</h3>
-        <p>WhatsApp: +55 12 99999-9999</p>
-        <p>E-mail: contato@overclockenterprise.com</p>
+        <p>WhatsApp: (12) 99757-0377</p>
+        <p>E-mail: overclockboost@gmail.com</p>
       </div>
       <div class="footer-col">
         <h3>Serviços</h3>
@@ -1180,7 +1337,7 @@
     </div>
   </footer>
 
-  <a class="float-whatsapp" href="https://wa.me/5512999999999" aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a class="float-whatsapp" href="https://wa.me/5512997570377" aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
@@ -1193,6 +1350,61 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     reveals.forEach((element) => observer.observe(element));
+
+    function toggleAccordion(button) {
+      const item = button.parentElement;
+      const content = item.querySelector('.accordion-content');
+      const icon = button.querySelector('i');
+
+      // Close all other accordions
+      document.querySelectorAll('.accordion-item').forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.querySelector('.accordion-content').classList.remove('open');
+          otherItem.querySelector('.accordion-header').classList.remove('active');
+        }
+      });
+
+      // Toggle current accordion
+      content.classList.toggle('open');
+      button.classList.toggle('active');
+    }
+
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('.metric-value');
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const decimal = parseInt(counter.getAttribute('data-decimal')) || 0;
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          counter.textContent = current.toFixed(decimal) + suffix;
+        }, 16);
+      });
+    }
+
+    // Trigger counter animation when dashboard is visible
+    const dashboardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          dashboardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const dashboard = document.querySelector('.dashboard');
+    if (dashboard) {
+      dashboardObserver.observe(dashboard);
+    }
   </script>
 </body>
 </html>
