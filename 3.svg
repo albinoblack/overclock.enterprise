@@ -1,0 +1,18 @@
+<svg width="500" height="200" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: Inter, sans-serif; fill: #E5E7EB; }
+    .title { font-size: 40px; font-weight: 700; }
+    .sub { font-size: 16px; fill: #06B6D4; letter-spacing: 3px; }
+  </style>
+
+  <!-- Ring -->
+  <circle cx="80" cy="100" r="40" stroke="#1E3A8A" stroke-width="8" fill="none"></circle>
+  <path d="M80 60 A40 40 0 0 1 120 100" stroke="#06B6D4" stroke-width="8" fill="none"></path>
+
+  <!-- Core -->
+  <circle cx="80" cy="100" r="10" fill="#06B6D4"></circle>
+
+  <!-- Text -->
+  <text x="160" y="105" class="text title">OVERCLOCK</text>
+  <text x="160" y="135" class="text sub">ENTERPRISE</text>
+</svg>
