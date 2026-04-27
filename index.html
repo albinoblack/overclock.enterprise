@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overclock Enterprise | Tecnologia Estratégica para Empresas</title>
+  <meta name="description" content="A Overclock Enterprise desenvolve sistemas, sites, automações e soluções de infraestrutura para transformar operações desorganizadas em negócios mais eficientes, seguros e escaláveis.">
+  <meta name="keywords" content="consultoria TI, desenvolvimento de sistemas, infraestrutura, automação, organização digital, sites profissionais">
+  <meta name="theme-color" content="#1a365d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --navy: #1a365d;
+      --dark-gray: #2d3748;
+      --white: #ffffff;
+      --off-white: #f7fafc;
+      --cyan: #00bcd4;
+      --light-gray: #e2e8f0;
+      --shadow: 0 10px 25px rgba(26, 54, 93, 0.1);
+      --shadow-soft: 0 4px 12px rgba(26, 54, 93, 0.08);
+      --radius: 8px;
+      --radius-lg: 12px;
+      --transition: 0.3s ease;
+      --container: 1200px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--dark-gray);
+      background: var(--off-white);
+      line-height: 1.6;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    section { padding: 80px 20px; }
+    .container { max-width: var(--container); margin: 0 auto; }
+
+    .section-header {
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 16px;
+      border-radius: 20px;
+      background: rgba(0, 188, 212, 0.1);
+      color: var(--cyan);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .section-header p {
+      color: var(--dark-gray);
+      font-size: 1.1rem;
+      max-width: 700px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--navy);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-secondary {
+      color: var(--navy);
+      background: var(--white);
+      border-color: var(--navy);
+    }
+
+    .btn-whatsapp {
+      color: var(--white);
+      background: #25d366;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--light-gray);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      padding: 16px 20px;
+      background: rgba(247, 250, 252, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .topbar-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 24px;
+      color: var(--dark-gray);
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover { color: var(--cyan); }
+
+    .hero {
+      position: relative;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, var(--navy), var(--dark-gray));
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero-copy .subheadline {
+      max-width: 600px;
+      opacity: 0.9;
+      font-size: 1.2rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .hero-visual {
+      min-height: 400px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-visual::before {
+      content: "TECNOLOGIA ESTRATÉGICA";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 188, 212, 0.2);
+      color: var(--cyan);
+      padding: 8px 12px;
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .hero-visual i {
+      font-size: 4rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .problem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .problem-item i {
+      color: var(--navy);
+      font-size: 1.5rem;
+      margin-top: 4px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--light-gray);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+
+    .differentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .differential-item {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .differential-item i {
+      color: var(--cyan);
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 32px 24px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .process-step .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .companies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .company-item {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .company-item i {
+      color: var(--cyan);
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    details {
+      border-top: 1px solid var(--light-gray);
+      padding: 20px 0;
+    }
+
+    details:last-child { border-bottom: 1px solid var(--light-gray); }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative;
+      padding-right: 30px;
+      color: var(--navy);
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      top: -2px;
+      right: 0;
+      color: var(--cyan);
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    details[open] summary::after { content: "-"; }
+
+    .cta-section {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta-panel {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-panel h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .cta-panel p {
+      opacity: 0.9;
+      margin-bottom: 32px;
+    }
+
+    footer {
+      padding: 40px 20px;
+      background: var(--dark-gray);
+      color: var(--off-white);
+    }
+
+    .footer-wrap {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      font-size: 1.5rem;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+
+    .footer-col a,
+    .footer-col p {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--off-white);
+    }
+
+    .float-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: var(--white);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      z-index: 80;
+      font-size: 1.7rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 60px 20px; }
+      .hero { padding: 80px 20px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-cta { flex-direction: column; }
+      .btn { width: 100%; }
+      .services-grid,
+      .differentials-grid,
+      .process-grid,
+      .companies-grid { grid-template-columns: 1fr; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Overclock Enterprise</div>
+      <nav class="nav">
+        <a href="#solucoes">Soluções</a>
+        <a href="#processo">Processo</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <h1>Tecnologia estratégica para empresas que precisam crescer com estrutura</h1>
+        <p class="subheadline">A Overclock Enterprise desenvolve sistemas, sites, automações e soluções de infraestrutura para transformar operações desorganizadas em negócios mais eficientes, seguros e escaláveis.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contato">Solicitar diagnóstico</a>
+          <a class="btn btn-secondary" href="#solucoes">Conhecer soluções</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <i class="fa-solid fa-server"></i>
+      </div>
+    </div>
+  </section>
+
+  <section id="problemas">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="section-kicker">Problemas comuns</span>
+        <h2>Sua empresa ainda depende de processos manuais, sistemas improvisados ou tecnologia mal estruturada?</h2>
+      </div>
+      <div class="problems-grid">
+        <div class="problem-item reveal">
+          <i class="fa-solid fa-file-excel"></i>
+          <div>
+            <h3>Processos feitos em planilhas soltas</h3>
+            <p>Dados dispersos, difícil controle e risco de erros manuais.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <i class="fa-solid fa-chart-line"></i>
+          <div>
+            <h3>Falta de controle sobre dados e operação</h3>
+            <p>Informações isoladas, sem visibilidade real do negócio.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <i class="fa-solid fa-globe"></i>
+          <div>
+            <h3>Sites lentos, antigos ou pouco profissionais</h3>
+            <p>Presença digital que não representa a empresa adequadamente.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <i class="fa-solid fa-link"></i>
+          <div>
+            <h3>Sistemas que não conversam entre si</h3>
+            <p>Ferramentas desconectadas, duplicação de esforços.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <i class="fa-solid fa-server"></i>
+          <div>
+            <h3>Infraestrutura instável ou sem monitoramento</h3>
+            <p>Riscos de downtime e falta de previsibilidade.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <i class="fa-solid fa-hand-paper"></i>
+          <div>
+            <h3>Dependência excessiva de tarefas manuais</h3>
+            <p>Perda de tempo com atividades repetitivas e passíveis de automação.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <i class="fa-solid fa-folder-open"></i>
+          <div>
+            <h3>Falta de padronização digital</h3>
+            <p>Processos inconsistentes e dificuldade de escalabilidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solucao">
+    <div class="container">
+      <div class="card reveal">
+        <div class="section-header">
+          <span class="section-kicker">Nossa abordagem</span>
+          <h2>Nós substituímos improviso por estrutura tecnológica</h2>
+          <p>A Overclock Enterprise atua no diagnóstico, planejamento, desenvolvimento e sustentação de soluções digitais. Nosso foco é criar tecnologia útil, segura e alinhada à realidade operacional da empresa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solucoes">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="section-kicker">Nossas soluções</span>
+        <h2>Soluções tecnológicas para estruturar e escalar seu negócio</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <i class="fa-solid fa-code"></i>
+          <h3>Desenvolvimento de Sistemas</h3>
+          <p>Sistemas web, ERPs, dashboards, aplicações internas, APIs e integrações sob medida para centralizar informações, automatizar processos e melhorar a gestão.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="fa-solid fa-globe"></i>
+          <h3>Sites e Landing Pages Profissionais</h3>
+          <p>Sites institucionais, páginas comerciais e aplicações web com performance, responsividade, segurança e estrutura pronta para representar sua empresa de forma profissional.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="fa-solid fa-folder-tree"></i>
+          <h3>Organização Digital Empresarial</h3>
+          <p>Estruturação de arquivos, fluxos de trabalho, padronização de processos, organização de documentos, ferramentas colaborativas e automações simples para reduzir caos operacional.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="fa-solid fa-cogs"></i>
+          <h3>Infraestrutura e DevOps</h3>
+          <p>Configuração de ambientes, deploy, containers, CI/CD, monitoramento, backups, alta disponibilidade e boas práticas para manter sistemas estáveis.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="fa-solid fa-robot"></i>
+          <h3>Automação de Processos</h3>
+          <p>Automação de tarefas repetitivas, integrações entre ferramentas, formulários inteligentes, fluxos internos e redução de trabalho manual.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="fa-solid fa-tools"></i>
+          <h3>Suporte e Evolução Contínua</h3>
+          <p>Manutenção, melhorias, sustentação técnica e acompanhamento recorrente para garantir que a tecnologia continue funcionando e evoluindo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="diferenciais">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="section-kicker">Por que nos escolher</span>
+        <h2>Por que escolher a Overclock Enterprise?</h2>
+      </div>
+      <div class="differentials-grid">
+        <div class="differential-item reveal">
+          <i class="fa-solid fa-eye"></i>
+          <h3>Visão técnica e operacional</h3>
+          <p>Entendemos tecnologia e processos de negócio para entregar soluções práticas.</p>
+        </div>
+        <div class="differential-item reveal">
+          <i class="fa-solid fa-users"></i>
+          <h3>Soluções pensadas para a realidade da empresa</h3>
+          <p>Adaptamos as tecnologias às necessidades reais, não o contrário.</p>
+        </div>
+        <div class="differential-item reveal">
+          <i class="fa-solid fa-shield-alt"></i>
+          <h3>Foco em eficiência, segurança e escalabilidade</h3>
+          <p>Tecnologia que cresce com o negócio de forma segura e eficiente.</p>
+        </div>
+        <div class="differential-item reveal">
+          <i class="fa-solid fa-wrench"></i>
+          <h3>Desenvolvimento com visão de manutenção</h3>
+          <p>Soluções projetadas para serem sustentáveis a longo prazo.</p>
+        </div>
+        <div class="differential-item reveal">
+          <i class="fa-solid fa-link"></i>
+          <h3>Integração entre software, infraestrutura e processos</h3>
+          <p>Abordagem holística para maximizar resultados.</p>
+        </div>
+        <div class="differential-item reveal">
+          <i class="fa-solid fa-handshake"></i>
+          <h3>Atendimento consultivo, não apenas execução</h3>
+          <p>Orientação estratégica para decisões tecnológicas acertadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="processo">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="section-kicker">Como trabalhamos</span>
+        <h2>Como funciona nosso trabalho</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <div class="number">1</div>
+          <h3>Diagnóstico</h3>
+          <p>Entendemos o cenário atual, gargalos, ferramentas usadas e necessidades reais.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="number">2</div>
+          <h3>Planejamento</h3>
+          <p>Definimos prioridades, escopo, arquitetura e caminho técnico mais eficiente.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="number">3</div>
+          <h3>Implementação</h3>
+          <p>Desenvolvemos, configuramos e integramos as soluções necessárias.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="number">4</div>
+          <h3>Sustentação</h3>
+          <p>Acompanhamos, corrigimos, monitoramos e evoluímos a solução conforme o crescimento da empresa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="empresas">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="section-kicker">Para quem servimos</span>
+        <h2>Soluções para empresas que precisam de mais controle e menos improviso</h2>
+      </div>
+      <div class="companies-grid">
+        <div class="company-item reveal">
+          <i class="fa-solid fa-building"></i>
+          <h3>Pequenas e médias empresas</h3>
+          <p>Empresas em crescimento que precisam estruturar operações digitais.</p>
+        </div>
+        <div class="company-item reveal">
+          <i class="fa-solid fa-tools"></i>
+          <h3>Prestadores de serviço</h3>
+          <p>Profissionais liberais e prestadores que dependem de gestão eficiente.</p>
+        </div>
+        <div class="company-item reveal">
+          <i class="fa-solid fa-stethoscope"></i>
+          <h3>Clínicas e consultórios</h3>
+          <p>Organizações de saúde que precisam de sistemas confiáveis e seguros.</p>
+        </div>
+        <div class="company-item reveal">
+          <i class="fa-solid fa-store"></i>
+          <h3>Empresas locais em expansão</h3>
+          <p>Negócios regionais buscando profissionalização e escalabilidade.</p>
+        </div>
+        <div class="company-item reveal">
+          <i class="fa-solid fa-file-excel"></i>
+          <h3>Negócios que dependem de planilhas e WhatsApp</h3>
+          <p>Empresas prontas para sair do improviso e adotar soluções estruturadas.</p>
+        </div>
+        <div class="company-item reveal">
+          <i class="fa-solid fa-briefcase"></i>
+          <h3>Empresas que precisam profissionalizar sua operação</h3>
+          <p>Organizações buscando eficiência e controle através da tecnologia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <span class="section-kicker">Diagnóstico gratuito</span>
+        <h2>Antes de contratar tecnologia, entenda onde sua empresa está perdendo eficiência.</h2>
+        <p>Realizamos um diagnóstico inicial para identificar oportunidades de melhoria e propor soluções alinhadas à sua realidade.</p>
+        <a class="btn btn-whatsapp" href="https://wa.me/5512999999999">Solicitar diagnóstico</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="section-kicker">Perguntas frequentes</span>
+        <h2>Dúvidas comuns sobre nossos serviços</h2>
+      </div>
+      <div class="faq-grid reveal">
+        <details>
+          <summary>A Overclock Enterprise cria apenas sites?</summary>
+          <p>Não. Sites são apenas uma das frentes. Atuamos também com sistemas, automações, infraestrutura, organização digital e suporte técnico.</p>
+        </details>
+        <details>
+          <summary>Vocês desenvolvem sistemas sob medida?</summary>
+          <p>Sim. Avaliamos a necessidade da empresa e propomos soluções sob medida, desde sistemas internos até integrações e dashboards.</p>
+        </details>
+        <details>
+          <summary>Atendem empresas pequenas?</summary>
+          <p>Sim. Nosso foco é ajudar empresas que precisam sair do improviso e estruturar melhor sua operação digital.</p>
+        </details>
+        <details>
+          <summary>Vocês trabalham com manutenção mensal?</summary>
+          <p>Sim. Podemos atuar com projetos pontuais ou contratos recorrentes de suporte, manutenção e evolução.</p>
+        </details>
+        <details>
+          <summary>A empresa precisa já ter equipe de TI?</summary>
+          <p>Não. Podemos atuar como apoio técnico externo para empresas que ainda não possuem equipe interna.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <h2>Sua empresa precisa de tecnologia que funcione na prática?</h2>
+        <p>Fale com a Overclock Enterprise e entenda como podemos estruturar, automatizar e profissionalizar sua operação digital.</p>
+        <a class="btn btn-whatsapp" href="https://wa.me/5512999999999">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-brand">Overclock Enterprise</div>
+        <p>Tecnologia, sistemas e organização digital para empresas</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <a href="#inicio">Início</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#processo">Processo</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <p>WhatsApp: +55 12 99999-9999</p>
+        <p>E-mail: contato@overclockenterprise.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Serviços</h3>
+        <p>Desenvolvimento de Sistemas</p>
+        <p>Sites Profissionais</p>
+        <p>Infraestrutura e DevOps</p>
+        <p>Automação de Processos</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-whatsapp" href="https://wa.me/5512999999999" aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
