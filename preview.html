@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Com a Overclock Enterprise | Estrutura Tecnológica para Empresas</title>
+  <meta name="description" content="A Com a Overclock Enterprise desenvolve sistemas, automatiza processos e implementa infraestrutura para transformar operações desorganizadas em negócios eficientes, seguros e escaláveis.">
+  <meta property="og:title" content="Com a Overclock Enterprise | Estrutura Tecnológica para Empresas">
+  <meta property="og:description" content="Sistemas, automação e infraestrutura para transformar sua operação digital. Do problema ao processo funcionando.">
+  <meta property="og:url" content="https://overclock-enterprise.vercel.app">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Com a Overclock Enterprise | Estrutura Tecnológica para Empresas">
+  <meta name="twitter:description" content="Implementamos sistemas, automações e infraestrutura. Não apenas recomendamos.">
+  <meta name="keywords" content="consultoria TI, desenvolvimento de sistemas, infraestrutura, automação, organização digital, sustentação técnica">
+  <meta name="theme-color" content="#020617">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --bg-primary: #020617;
+      --bg-secondary: #0f172a;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --blue: #1e40af;
+      --blue-light: #3b82f6;
+      --gray: #64748b;
+      --glow-blue: rgba(30, 64, 175, 0.25);
+      --glow-blue-light: rgba(59, 130, 246, 0.25);
+      --border: rgba(241, 245, 249, 0.1);
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 0 20px rgba(30, 64, 175, 0.1);
+      --radius: 8px;
+      --radius-lg: 12px;
+      --transition: 0.3s ease;
+      --container: 1200px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 20%, var(--glow-blue), transparent 50%),
+        radial-gradient(circle at 80% 80%, var(--glow-blue-light), transparent 50%);
+      background-size: 200px 200px;
+      opacity: 0.3;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    section { padding: 100px 20px; }
+    .section-dark {
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    }
+    .container { max-width: var(--container); margin: 0 auto; }
+
+    .section-header {
+      max-width: 800px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-shadow: 0 0 20px var(--glow-blue);
+      text-align: center;
+      width: 100%;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+      border-color: var(--blue);
+    }
+
+    .btn-primary {
+      color: var(--text-primary);
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      box-shadow: 0 0 20px var(--glow-blue);
+    }
+
+    .btn-secondary {
+      color: var(--text-primary);
+      border-color: var(--border);
+    }
+
+    .btn-whatsapp {
+      color: var(--text-primary);
+      background: linear-gradient(135deg, #20ba5a, #25d366);
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(30, 64, 175, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: var(--radius-lg);
+      padding: 1px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
+      opacity: 0;
+      transition: opacity var(--transition);
+      z-index: -1;
+    }
+
+    .card:hover::before { opacity: 0.3; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 20px 0;
+      background: rgba(2, 6, 23, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      color: var(--blue-light);
+      font-weight: 700;
+      text-shadow: 0 0 10px var(--glow-blue-light);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 32px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav a:hover { color: var(--blue-light); }
+
+    .hero {
+      position: relative;
+      padding: 120px 20px;
+      background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+      color: var(--text-primary);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 30% 40%, var(--glow-blue), transparent 60%),
+        radial-gradient(circle at 70% 60%, var(--glow-blue-light), transparent 60%);
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      font-weight: 700;
+      text-shadow: 0 0 30px var(--glow-blue);
+      text-align: center;
+    }
+
+    .hero-copy .subtitle {
+      max-width: 600px;
+      opacity: 0.9;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tech-dashboard {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .dashboard-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .dashboard-metric {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--blue-light);
+      margin-bottom: 4px;
+      text-shadow: 0 0 10px var(--glow-blue-light);
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .connection-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .connection-lines::before,
+    .connection-lines::after,
+    .connection-lines span {
+      position: absolute;
+      background: linear-gradient(45deg, var(--blue), var(--blue-light));
+      opacity: 0.4;
+    }
+
+    .connection-lines::before {
+      top: 25%;
+      left: 20%;
+      width: 180px;
+      height: 2px;
+      transform: rotate(15deg);
+    }
+
+    .connection-lines::after {
+      bottom: 35%;
+      right: 20%;
+      width: 140px;
+      height: 2px;
+      transform: rotate(-25deg);
+    }
+
+    .connection-lines span {
+      top: 60%;
+      left: 35%;
+      width: 120px;
+      height: 2px;
+      transform: rotate(45deg);
+    }
+
+    .belief-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .belief-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .belief-card:hover {
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .belief-card i {
+      color: var(--cyan);
+      font-size: 2rem;
+      margin-bottom: 16px;
+      text-shadow: 0 0 10px var(--glow-cyan);
+    }
+
+    .belief-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .solution-blocks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .solution-block {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .solution-block:hover {
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(6, 182, 212, 0.3);
+    }
+
+    .solution-block i {
+      color: var(--blue-light);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      text-shadow: 0 0 10px var(--glow-blue-light);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(59, 130, 246, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .service-card i {
+      color: var(--blue);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px var(--glow-blue);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .service-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .differential {
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .comparison-col {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .comparison-col h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+      text-shadow: 0 0 15px var(--glow-blue);
+    }
+
+    .comparison-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .comparison-col li {
+      padding: 8px 0;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-col li:last-child { border-bottom: none; }
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .authority-item {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .authority-item:hover {
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .authority-item i {
+      color: var(--blue-light);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      text-shadow: 0 0 10px var(--glow-blue-light);
+    }
+
+    .method-timeline {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 60px;
+      bottom: -40px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--blue), var(--blue-light));
+      opacity: 0.5;
+    }
+
+    .timeline-item:last-child::after { display: none; }
+
+    .timeline-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: var(--text-primary);
+      font-size: 1.2rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 0 15px var(--glow-blue);
+    }
+
+    .timeline-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .timeline-content p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+      text-align: center;
+    }
+
+    .cta-panel {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-panel h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+      text-shadow: 0 0 20px var(--glow-blue);
+      text-align: center;
+    }
+
+    .cta-panel p {
+      opacity: 0.9;
+      margin-bottom: 32px;
+      color: var(--text-secondary);
+    }
+
+    .target-audience {
+      background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .audience-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .audience-card:hover {
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .audience-card i {
+      color: var(--blue-light);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      text-shadow: 0 0 10px var(--glow-blue-light);
+    }
+
+    .faq-accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      border-top: 1px solid var(--border);
+    }
+
+    .accordion-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 24px 0;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .accordion-header:hover {
+      color: var(--blue-light);
+    }
+
+    .accordion-header i {
+      color: var(--blue-light);
+      transition: var(--transition);
+      text-shadow: 0 0 10px var(--glow-blue-light);
+    }
+
+    .accordion-header.active i {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .accordion-content.open {
+      max-height: 200px;
+    }
+
+    footer {
+      padding: 60px 20px;
+      background: var(--bg-primary);
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-wrap {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      font-size: 1.5rem;
+      color: var(--blue-light);
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-shadow: 0 0 10px var(--glow-blue-light);
+    }
+
+    .footer-tagline {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .footer-col h3 {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .footer-col a,
+    .footer-col p {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+    }
+
+    .footer-col a:hover { color: var(--blue-light); }
+
+    .float-whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #20ba5a, #25d366);
+      color: var(--text-primary);
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+      z-index: 100;
+      font-size: 1.5rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 80px 20px; }
+      .hero { padding: 100px 20px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-cta { flex-direction: column; }
+      .btn { width: 100%; }
+      .services-grid,
+      .authority-grid,
+      .audience-grid,
+      .belief-cards,
+      .solution-blocks { grid-template-columns: 1fr; }
+      .comparison { grid-template-columns: 1fr; }
+      .timeline-item { flex-direction: column; text-align: center; }
+      .timeline-item::after { display: none; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .tech-dashboard { height: 350px; }
+      .floating-elements { display: none; }
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(59, 130, 246, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-content {
+      margin-bottom: 24px;
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .testimonial-content::before {
+      content: '"';
+      font-size: 3rem;
+      color: var(--blue-light);
+      position: absolute;
+      top: -10px;
+      left: -20px;
+      opacity: 0.3;
+    }
+
+    .testimonial-author strong {
+      display: block;
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .testimonial-author span {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .ai-chat-button {
+    position: fixed;
+    right: 24px;
+    bottom: 92px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 0 24px rgba(6,182,212,.35);
+    z-index: 120;
+    cursor: pointer;
+    font-size: 1.35rem;
+  }
+
+  .ai-chat-window {
+    position: fixed;
+    right: 24px;
+    bottom: 160px;
+    width: min(380px, calc(100vw - 32px));
+    height: 520px;
+    background: rgba(2, 6, 23, .96);
+    border: 1px solid rgba(226,232,240,.12);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45), 0 0 30px rgba(59,130,246,.18);
+    z-index: 121;
+    display: none;
+    overflow: hidden;
+    backdrop-filter: blur(14px);
+  }
+
+  .ai-chat-window.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-chat-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(226,232,240,.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ai-chat-header strong {
+    color: #e2e8f0;
+  }
+
+  .ai-chat-header span {
+    display: block;
+    color: #94a3b8;
+    font-size: .82rem;
+  }
+
+  .ai-chat-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .ai-chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ai-msg {
+    padding: 12px 14px;
+    border-radius: 14px;
+    font-size: .92rem;
+    line-height: 1.45;
+    max-width: 85%;
+    white-space: pre-wrap;
+  }
+
+  .ai-msg.bot {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(226,232,240,.10);
+    color: #e2e8f0;
+    align-self: flex-start;
+  }
+
+  .ai-msg.user {
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: #fff;
+    align-self: flex-end;
+  }
+
+  .ai-chat-form {
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid rgba(226,232,240,.12);
+  }
+
+  .ai-chat-input {
+    flex: 1;
+    border: 1px solid rgba(226,232,240,.12);
+    background: rgba(255,255,255,.06);
+    color: #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    outline: none;
+  }
+
+  .ai-chat-send {
+    border: none;
+    border-radius: 10px;
+    padding: 0 16px;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+  }
+
+</style>
+<button class="ai-chat-button" onclick="toggleAiChat()" aria-label="Abrir assistente virtual">
+  <i class="fa-solid fa-robot"></i>
+</button>
+
+<div class="ai-chat-window" id="aiChatWindow">
+  <div class="ai-chat-header">
+    <div>
+      <strong>Assistente Com a Overclock</strong>
+      <span>Diagnóstico inicial de TI</span>
+    </div>
+    <button class="ai-chat-close" onclick="toggleAiChat()">×</button>
+  </div>
+
+  <div class="ai-chat-messages" id="aiChatMessages">
+    <div class="ai-msg bot">
+      Olá! Sou a assistente da Com a Overclock Enterprise. Posso te ajudar a entender se sua empresa precisa de sistema, automação, site, organização digital ou infraestrutura.
+    </div>
+  </div>
+
+  <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
+    <input
+      class="ai-chat-input"
+      id="aiChatInput"
+      type="text"
+      placeholder="Descreva o que sua empresa precisa..."
+      autocomplete="off"
+    />
+    <button class="ai-chat-send" type="submit">
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
+  </form>
+</div>
+
+<script>
+  function toggleAiChat() {
+    document.getElementById("aiChatWindow").classList.toggle("open");
+  }
+
+  function addAiMessage(text, sender) {
+    const messages = document.getElementById("aiChatMessages");
+    const div = document.createElement("div");
+    div.className = "ai-msg " + sender;
+    div.textContent = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+
+  async function sendAiMessage(event) {
+    event.preventDefault();
+
+    const input = document.getElementById("aiChatInput");
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    addAiMessage(message, "user");
+    input.value = "";
+
+    const loading = addAiMessage("Analisando sua operação...", "bot");
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+
+      loading.textContent = data.answer || data.error || "Não consegui responder agora.";
+    } catch (error) {
+      loading.textContent = "Erro ao conectar com a assistente. Tente novamente em instantes.";
+    }
+  }
+</script>
+
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">Com a Overclock Enterprise</div>
+      <nav class="nav">
+        <a href="#solucoes">Soluções</a>
+        <a href="#metodo">Método</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn btn-primary" href="#contato">Quero organizar minha operação</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <h1>Sua empresa não precisa de mais improviso. Precisa de estrutura tecnológica.</h1>
+        <p class="subtitle">Desenvolvemos sistemas, automatizamos processos e implementamos infraestrutura para transformar operações desorganizadas em ambientes digitais eficientes, seguros e escaláveis.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contato">Quero organizar minha operação técnico</a>
+          <a class="btn btn-secondary" href="#solucoes">Ver como funciona</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="tech-dashboard">
+          <div class="dashboard-header">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Dashboard Operacional</span>
+          </div>
+          <div class="dashboard-grid">
+            <div class="dashboard-metric">
+              <div class="metric-value" data-target="87" data-suffix="%">0%</div>
+              <div class="metric-label">Processos automatizados</div>
+            </div>
+            <div class="dashboard-metric">
+              <div class="metric-value" data-target="94" data-suffix="%">0%</div>
+              <div class="metric-label">Dados centralizados</div>
+            </div>
+            <div class="dashboard-metric">
+              <div class="metric-value" data-target="99.9" data-suffix="%" data-decimal="1">0%</div>
+              <div class="metric-label">Infraestrutura monitorada</div>
+            </div>
+            <div class="dashboard-metric">
+              <div class="metric-value" data-target="100" data-suffix="%">0%</div>
+              <div class="metric-label">Fluxos integrados</div>
+            </div>
+          </div>
+          <div class="floating-elements">
+            <div class="connection-lines">
+              <span></span>
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+            alt="Circuito de computador representando infraestrutura tecnológica"
+            style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); opacity:0.4; margin-top:12px;"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quebra-crenca" class="section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>O problema não é falta de gestão. É falta de implementação.</h2>
+        <p>Muitas empresas sabem o que precisa melhorar, mas continuam presas em planilhas, tarefas manuais e sistemas desconectados.</p>
+      </div>
+      <div class="belief-cards">
+        <div class="belief-card reveal">
+          <i class="fa-solid fa-file-excel"></i>
+          <h3>Diagnóstico sem execução não muda operação</h3>
+        </div>
+        <div class="belief-card reveal">
+          <i class="fa-solid fa-hand-paper"></i>
+          <h3>Processos sem sistema viram retrabalho</h3>
+        </div>
+        <div class="belief-card reveal">
+          <i class="fa-solid fa-link"></i>
+          <h3>Empresas crescendo sem estrutura vira caos</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solucao" class="section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Nós implementamos o que outras empresas apenas recomendam.</h2>
+        <p>Atuamos na construção completa da estrutura digital: sistemas, automações, dados e infraestrutura funcionando de forma integrada.</p>
+      </div>
+      <div class="solution-blocks">
+        <div class="solution-block reveal">
+          <i class="fa-solid fa-code"></i>
+          <h3>Sistemas que centralizam operação</h3>
+        </div>
+        <div class="solution-block reveal">
+          <i class="fa-solid fa-robot"></i>
+          <h3>Automação que elimina retrabalho</h3>
+        </div>
+        <div class="solution-block reveal">
+          <i class="fa-solid fa-server"></i>
+          <h3>Infraestrutura que sustenta crescimento</h3>
+        </div>
+        <div class="solution-block reveal">
+          <i class="fa-solid fa-plug"></i>
+          <h3>Integração entre ferramentas</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solucoes">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Soluções de TI para estruturar e escalar sua empresa</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&q=80" alt="Desenvolvimento de Sistemas" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
+          <i class="fa-solid fa-code"></i>
+          <h3>Desenvolvimento de Sistemas</h3>
+          <p>Sistemas web, ERPs, dashboards e APIs para centralizar e controlar operação.</p>
+        </article>
+        <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&q=80" alt="Automação de Processos" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
+          <i class="fa-solid fa-robot"></i>
+          <h3>Automação de Processos</h3>
+          <p>Fluxos automatizados que eliminam tarefas manuais e reduzem falhas.</p>
+        </article>
+        <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80" alt="Estrutura digital" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
+          <i class="fa-solid fa-cogs"></i>
+          <h3>Estrutura digital</h3>
+          <p>Ambientes estáveis, monitorados, com deploy estruturado e segurança.</p>
+        </article>
+        <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80" alt="Organização Digital" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
+          <i class="fa-solid fa-folder-tree"></i>
+          <h3>Organização Digital</h3>
+          <p>Estruturação de processos, arquivos e operação digital.</p>
+        </article>
+        <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" alt="Sites e Aplicações Web" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
+          <i class="fa-solid fa-globe"></i>
+          <h3>Sites e Aplicações Web</h3>
+          <p>Presença digital profissional com performance e credibilidade.</p>
+        </article>
+        <article class="service-card reveal">
+          <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80" alt="Suporte Contínuo" style="width:100%; height:120px; object-fit:cover; border-radius:var(--radius); margin-bottom:20px;">
+          <i class="fa-solid fa-tools"></i>
+          <h3>Suporte Contínuo</h3>
+          <p>Manutenção, evolução e estabilidade da operação.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="diferenciais" class="section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Implementação prática, não relatório bonito.</h2>
+      </div>
+      <div class="comparison reveal">
+        <div class="comparison-col">
+          <h3>Abordagem Tradicional</h3>
+          <ul>
+            <li>Diagnóstico superficial</li>
+            <li>Recomendações genéricas</li>
+            <li>Dependência de terceiros</li>
+            <li>Implementação manual</li>
+            <li>Suporte limitado</li>
+            <li>Custos recorrentes altos</li>
+            <li>Riscos de falhas operacionais</li>
+            <li>Falta de monitoramento</li>
+          </ul>
+        </div>
+        <div class="comparison-col">
+          <h3>Com a Overclock Enterprise</h3>
+          <ul>
+            <li>Análise técnica profunda</li>
+            <li>Soluções personalizadas</li>
+            <li>Implementação completa</li>
+            <li>Automação inteligente</li>
+            <li>Suporte técnico contínuo</li>
+            <li>Otimização de custos</li>
+            <li>Infraestrutura resiliente</li>
+            <li>Monitoramento 24/7</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="autoridade" class="section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Base técnica para operações que precisam funcionar.</h2>
+      </div>
+      <div class="authority-grid">
+        <div class="authority-item reveal">
+          <i class="fa-solid fa-rocket"></i>
+          <p>Deploy estruturado</p>
+        </div>
+        <div class="authority-item reveal">
+          <i class="fa-solid fa-chart-line"></i>
+          <p>Monitoramento e observabilidade</p>
+        </div>
+        <div class="authority-item reveal">
+          <i class="fa-solid fa-box"></i>
+          <p>Containers e CI/CD</p>
+        </div>
+        <div class="authority-item reveal">
+          <i class="fa-solid fa-plug"></i>
+          <p>Integração entre sistemas</p>
+        </div>
+        <div class="authority-item reveal">
+          <i class="fa-solid fa-shield-alt"></i>
+          <p>Backups e segurança</p>
+        </div>
+        <div class="authority-item reveal">
+          <i class="fa-solid fa-sitemap"></i>
+          <p>Automação operacional</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Do diagnóstico à sustentação</h2>
+      </div>
+      <div class="method-timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-number">1</div>
+          <div class="timeline-content">
+            <h3>Quero organizar minha operação</h3>
+            <p>Mapeamos gargalos, processos, ferramentas, riscos e oportunidades de automação.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-number">2</div>
+          <div class="timeline-content">
+            <h3>Planejamento estrutural</h3>
+            <p>Definimos prioridades, arquitetura, escopo e caminho de implementação mais eficiente.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-number">3</div>
+          <div class="timeline-content">
+            <h3>Implementação</h3>
+            <p>Desenvolvemos sistemas, configuramos ambientes, integramos ferramentas e automatizamos fluxos.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-number">4</div>
+          <div class="timeline-content">
+            <h3>Validação</h3>
+            <p>Testamos, ajustamos e garantimos que a solução funcione na operação real.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-number">5</div>
+          <div class="timeline-content">
+            <h3>Acompanhamento e evolução</h3>
+            <p>Acompanhamos, corrigimos, otimizamos e evoluímos a estrutura conforme a empresa cresce.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <h2>Antes de contratar mais ferramentas, entenda onde sua operação perde eficiência.</h2>
+        <p>Um diagnóstico técnico mostra quais processos podem ser automatizados, quais dados precisam ser centralizados e quais sistemas realmente fazem sentido.</p>
+        <a class="btn btn-whatsapp" href="https://wa.me/5512997570377">Quero organizar minha operação técnico</a>
+        <a class="btn btn-email" href="mailto:overclockboost@gmail.com" style="margin-top:12px;">
+          <i class="fa-solid fa-envelope"></i>
+          Prefere e-mail? Fale por aqui
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="publico">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Para empresas que querem sair do improviso digital</h2>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-hand-paper"></i>
+          <p>Empresas com processos manuais</p>
+        </div>
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-file-excel"></i>
+          <p>Uso excessivo de planilhas</p>
+        </div>
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-comments"></i>
+          <p>Dependência de WhatsApp</p>
+        </div>
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-link"></i>
+          <p>Falta de integração</p>
+        </div>
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-chart-line"></i>
+          <p>Crescimento desorganizado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="faq-accordion reveal">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>A Com a Overclock Enterprise cria apenas sites?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Não. Sites são apenas uma das frentes. Atuamos com sistemas, automações, infraestrutura, organização digital, suporte técnico e evolução contínua.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Vocês desenvolvem sistemas sob medida?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Sim. Avaliamos a necessidade da empresa e desenvolvemos soluções sob medida, como sistemas internos, ERPs, dashboards, APIs e integrações.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Minha empresa é pequena. Faz sentido contratar?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Sim, principalmente se a operação já depende de planilhas, WhatsApp, tarefas manuais ou ferramentas desconectadas. A estrutura pode começar pequena e evoluir por etapas.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Vocês oferecem acompanhamento mensal?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Sim. Além de projetos pontuais, podemos atuar com suporte recorrente, manutenção, melhorias, monitoramento e evolução técnica.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Preciso ter uma equipe de TI interna?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Não. Podemos atuar como apoio técnico externo para empresas que ainda não possuem equipe interna ou que precisam complementar sua capacidade técnica.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>Vocês trabalham com infraestrutura e DevOps?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Sim. Atuamos com ambientes de aplicação, deploy, containers, CI/CD, monitoramento, backups e boas práticas para operação estável.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <h2>Pronto para transformar improviso em estrutura tecnológica?</h2>
+        <p>Fale com a Com a Overclock Enterprise e descubra como sistemas, automações e infraestrutura podem tornar sua empresa mais eficiente, segura e escalável.</p>
+        <a class="btn btn-whatsapp" href="https://wa.me/5512997570377">Falar com a Com a Overclock Enterprise</a>
+        <a class="btn btn-email" href="mailto:overclockboost@gmail.com" style="margin-top:12px;">
+          <i class="fa-solid fa-envelope"></i>
+          Prefere e-mail? Fale por aqui
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="social-proof" class="section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Empresas que confiam na nossa expertise</h2>
+      </div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"A Com a Overclock transformou completamente nossa operação logística. Antes tínhamos processos manuais que levavam dias, agora tudo é automatizado e monitorado em tempo real."</p>
+          </div>
+          <div class="testimonial-author">
+            <strong>Carlos Mendes</strong>
+            <span>Diretor de Operações, LogiTrans</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Implementaram um sistema ERP personalizado que se integrou perfeitamente com nossos processos existentes. O suporte técnico é excepcional."</p>
+          </div>
+          <div class="testimonial-author">
+            <strong>Ana Silva</strong>
+            <span>CEO, TechSolutions</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Desde que contratamos a Com a Overclock, nossa produtividade aumentou 40% e os erros operacionais praticamente zeraram. Recomendo fortemente."</p>
+          </div>
+          <div class="testimonial-author">
+            <strong>Roberto Santos</strong>
+            <span>Gerente de TI, Indústria Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-brand">Com a Overclock Enterprise</div>
+        <p class="footer-tagline">Sistemas, automação, infraestrutura e organização digital para empresas.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <a href="#solucoes">Soluções</a>
+        <a href="#metodo">Método</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <p>WhatsApp: (12) 99757-0377</p>
+        <p>E-mail: overclockboost@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Serviços</h3>
+        <p>Desenvolvimento de Sistemas</p>
+        <p>Automação de Processos</p>
+        <p>Estrutura digital</p>
+        <p>Organização Digital</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-whatsapp" href="https://wa.me/5512997570377" aria-label="Quero entender onde estou perdendo eficiência"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach((element) => observer.observe(element));
+
+    function toggleAccordion(button) {
+      const item = button.parentElement;
+      const content = item.querySelector('.accordion-content');
+      const icon = button.querySelector('i');
+
+      // Close all other accordions
+      document.querySelectorAll('.accordion-item').forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.querySelector('.accordion-content').classList.remove('open');
+          otherItem.querySelector('.accordion-header').classList.remove('active');
+        }
+      });
+
+      // Toggle current accordion
+      content.classList.toggle('open');
+      button.classList.toggle('active');
+    }
+
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('.metric-value');
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const decimal = parseInt(counter.getAttribute('data-decimal')) || 0;
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          counter.textContent = current.toFixed(decimal) + suffix;
+        }, 16);
+      });
+    }
+
+    // Trigger counter animation when dashboard is visible
+    const dashboardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          dashboardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const dashboard = document.querySelector('.dashboard');
+    if (dashboard) {
+      dashboardObserver.observe(dashboard);
+    }
+  </script>
+</body>
+</html>
