@@ -1,17 +1,19 @@
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Método não permitido' });
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Método não permitido" });
   }
 
   try {
     const { message } = req.body || {};
 
     if (!message || !message.trim()) {
-      return res.status(400).json({ error: 'Mensagem vazia' });
+      return res.status(400).json({ error: "Mensagem vazia" });
     }
 
     if (!process.env.OPENAI_API_KEY) {
-      return res.status(500).json({ error: 'OPENAI_API_KEY não encontrada na Vercel.' });
+      return res.status(500).json({
+        error: "OPENAI_API_KEY não encontrada na Vercel.",
+      });
     }
 
     const systemPrompt = `
@@ -95,56 +97,67 @@ INFORMAÇÕES DA EMPRESA:
 
 CTA PADRÃO:
 Quando fizer sentido, finalize com:
-"Se quiser, podemos fazer um diagnóstico técnico inicial pelo WhatsApp: (12) 99208-3653."
+"Se quiser, podemos fazer um diagnóstico técnico inicial pelo WhatsApp: (12) 99757-0377."
 
 EXEMPLO DE BOA RESPOSTA:
 "Faz sentido avaliar isso com cuidado. Quando uma empresa depende muito de planilhas, WhatsApp e controles manuais, normalmente o problema não é apenas falta de organização, mas falta de uma estrutura digital que centralize as informações.
 
 Nesse caso, pode fazer sentido criar um sistema interno, automatizar partes do processo ou organizar melhor as ferramentas que a empresa já usa. Para indicar o melhor caminho, seria importante entender quais tarefas são feitas manualmente hoje, quem usa essas informações e onde ocorrem mais erros ou retrabalho.
 
-Se quiser, podemos fazer um diagnóstico técnico inicial pelo WhatsApp: (12) 99208-3653."
+Se quiser, podemos fazer um diagnóstico técnico inicial pelo WhatsApp: (12) 99757-0377."
 `;
 
-    const response = await fetch('https://api.openai.com/v1/responses', {
-      method: 'POST',
+    const response = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: 'gpt-5-mini',
+        model: "gpt-4.1-mini",
         instructions: systemPrompt,
-        input: message
-      })
+        input: message,
+      }),
     });
 
     const data = await response.json();
 
+    console.log("OPENAI RAW:", JSON.stringify(data, null, 2));
+
     if (!response.ok) {
       return res.status(response.status).json({
-        error: data?.error?.message || 'Erro ao consultar a OpenAI',
-        details: data
+        error: data?.error?.message || "Erro ao consultar a OpenAI",
+        details: data,
       });
     }
 
-    const answer =
-      data.output_text ||
-      data.output?.[0]?.content?.[0]?.text ||
-      data.output?.[0]?.content?.[0]?.text?.value ||
-      '';
+    let answer = data.output_text || "";
+
+    if (!answer && Array.isArray(data.output)) {
+      answer = data.output
+        .flatMap((item) => item.content || [])
+        .map((content) => {
+          if (typeof content.text === "string") return content.text;
+          if (content.text?.value) return content.text.value;
+          if (typeof content.value === "string") return content.value;
+          return "";
+        })
+        .join("\n")
+        .trim();
+    }
 
     if (!answer) {
       return res.status(500).json({
-        error: 'A OpenAI respondeu, mas não retornou texto.',
-        raw: data
+        error: "A OpenAI respondeu, mas não retornou texto.",
+        raw: data,
       });
     }
 
     return res.status(200).json({ answer });
   } catch (error) {
     return res.status(500).json({
-      error: 'Erro interno ao processar a mensagem.',
-      details: error.message
+      error: "Erro interno ao processar a mensagem.",
+      details: error.message,
     });
   }
 }
