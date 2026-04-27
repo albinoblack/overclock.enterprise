@@ -14,18 +14,17 @@
   <style>
     :root {
       --bg-primary: #020617;
-      --bg-secondary: #0B1120;
-      --text-primary: #E2E8F0;
-      --text-secondary: #94A3B8;
-      --blue: #3B82F6;
-      --cyan: #06B6D4;
-      --purple: #8B5CF6;
-      --glow-blue: rgba(59, 130, 246, 0.25);
-      --glow-cyan: rgba(6, 182, 212, 0.25);
-      --glow-purple: rgba(139, 92, 246, 0.25);
-      --border: rgba(226, 232, 240, 0.1);
+      --bg-secondary: #0f172a;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --blue: #1e40af;
+      --blue-light: #3b82f6;
+      --gray: #64748b;
+      --glow-blue: rgba(30, 64, 175, 0.25);
+      --glow-blue-light: rgba(59, 130, 246, 0.25);
+      --border: rgba(241, 245, 249, 0.1);
       --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.1);
+      --shadow-glow: 0 0 20px rgba(30, 64, 175, 0.1);
       --radius: 8px;
       --radius-lg: 12px;
       --transition: 0.3s ease;
@@ -52,8 +51,7 @@
       height: 100%;
       background:
         radial-gradient(circle at 20% 20%, var(--glow-blue), transparent 50%),
-        radial-gradient(circle at 80% 80%, var(--glow-cyan), transparent 50%),
-        linear-gradient(45deg, transparent 49%, var(--glow-purple) 50%, transparent 51%);
+        radial-gradient(circle at 80% 80%, var(--glow-blue-light), transparent 50%);
       background-size: 200px 200px;
       opacity: 0.3;
       z-index: -2;
@@ -67,8 +65,8 @@
       width: 100%;
       height: 100%;
       background-image:
-        linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
       background-size: 50px 50px;
       z-index: -1;
     }
@@ -76,6 +74,9 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     section { padding: 100px 20px; }
+    .section-dark {
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    }
     .container { max-width: var(--container); margin: 0 auto; }
 
     .section-header {
@@ -128,7 +129,7 @@
 
     .btn-primary {
       color: var(--text-primary);
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
       box-shadow: 0 0 20px var(--glow-blue);
     }
 
@@ -156,7 +157,8 @@
 
     .card:hover {
       box-shadow: var(--shadow-glow);
-      border-color: rgba(59, 130, 246, 0.3);
+      border-color: rgba(30, 64, 175, 0.3);
+      transform: translateY(-4px);
     }
 
     .card::before {
@@ -168,7 +170,7 @@
       bottom: 0;
       border-radius: var(--radius-lg);
       padding: 1px;
-      background: linear-gradient(135deg, var(--blue), var(--cyan), var(--purple));
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
       mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       mask-composite: exclude;
       -webkit-mask-composite: xor;
@@ -200,9 +202,9 @@
 
     .brand {
       font-size: 1.5rem;
-      color: var(--cyan);
+      color: var(--blue-light);
       font-weight: 700;
-      text-shadow: 0 0 10px var(--glow-cyan);
+      text-shadow: 0 0 10px var(--glow-blue-light);
     }
 
     .nav {
@@ -215,7 +217,7 @@
       font-weight: 500;
     }
 
-    .nav a:hover { color: var(--cyan); }
+    .nav a:hover { color: var(--blue-light); }
 
     .hero {
       position: relative;
@@ -234,7 +236,7 @@
       height: 100%;
       background:
         radial-gradient(circle at 30% 40%, var(--glow-blue), transparent 60%),
-        radial-gradient(circle at 70% 60%, var(--glow-purple), transparent 60%);
+        radial-gradient(circle at 70% 60%, var(--glow-blue-light), transparent 60%);
       z-index: -1;
     }
 
@@ -316,9 +318,9 @@
     .metric-value {
       font-size: 1.8rem;
       font-weight: 700;
-      color: var(--cyan);
+      color: var(--blue-light);
       margin-bottom: 4px;
-      text-shadow: 0 0 10px var(--glow-cyan);
+      text-shadow: 0 0 10px var(--glow-blue-light);
     }
 
     .metric-label {
@@ -335,66 +337,6 @@
       pointer-events: none;
     }
 
-    .floating-card {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      box-shadow: var(--shadow);
-      animation: float 8s ease-in-out infinite;
-    }
-
-    .floating-card:nth-child(1) {
-      top: 15%;
-      left: 10%;
-      animation-delay: 0s;
-      border-color: var(--blue);
-      box-shadow: 0 0 15px var(--glow-blue);
-    }
-
-    .floating-card:nth-child(2) {
-      top: 35%;
-      right: 15%;
-      animation-delay: 2s;
-      border-color: var(--cyan);
-      box-shadow: 0 0 15px var(--glow-cyan);
-    }
-
-    .floating-card:nth-child(3) {
-      bottom: 25%;
-      left: 15%;
-      animation-delay: 4s;
-      border-color: var(--purple);
-      box-shadow: 0 0 15px var(--glow-purple);
-    }
-
-    .floating-card:nth-child(4) {
-      bottom: 15%;
-      right: 10%;
-      animation-delay: 6s;
-      border-color: var(--blue);
-      box-shadow: 0 0 15px var(--glow-blue);
-    }
-
-    .floating-card:nth-child(5) {
-      top: 55%;
-      left: 50%;
-      transform: translateX(-50%);
-      animation-delay: 1s;
-      border-color: var(--cyan);
-      box-shadow: 0 0 15px var(--glow-cyan);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) scale(1); }
-      50% { transform: translateY(-15px) scale(1.05); }
-    }
-
     .connection-lines {
       position: absolute;
       top: 0;
@@ -408,7 +350,7 @@
     .connection-lines::after,
     .connection-lines span {
       position: absolute;
-      background: linear-gradient(45deg, var(--blue), var(--cyan));
+      background: linear-gradient(45deg, var(--blue), var(--blue-light));
       opacity: 0.4;
     }
 
@@ -494,10 +436,10 @@
     }
 
     .solution-block i {
-      color: var(--cyan);
+      color: var(--blue-light);
       font-size: 1.5rem;
       margin-bottom: 12px;
-      text-shadow: 0 0 10px var(--glow-cyan);
+      text-shadow: 0 0 10px var(--glow-blue-light);
     }
 
     .services-grid {
@@ -605,10 +547,10 @@
     }
 
     .authority-item i {
-      color: var(--purple);
+      color: var(--blue-light);
       font-size: 1.5rem;
       margin-bottom: 12px;
-      text-shadow: 0 0 10px var(--glow-purple);
+      text-shadow: 0 0 10px var(--glow-blue-light);
     }
 
     .method-timeline {
@@ -631,7 +573,7 @@
       top: 60px;
       bottom: -40px;
       width: 2px;
-      background: linear-gradient(to bottom, var(--blue), var(--cyan));
+      background: linear-gradient(to bottom, var(--blue), var(--blue-light));
       opacity: 0.5;
     }
 
@@ -644,7 +586,7 @@
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
       color: var(--text-primary);
       font-size: 1.2rem;
       font-weight: 700;
@@ -712,10 +654,10 @@
     }
 
     .audience-card i {
-      color: var(--cyan);
+      color: var(--blue-light);
       font-size: 1.5rem;
       margin-bottom: 12px;
-      text-shadow: 0 0 10px var(--glow-cyan);
+      text-shadow: 0 0 10px var(--glow-blue-light);
     }
 
     .faq-grid {
@@ -747,11 +689,11 @@
       position: absolute;
       top: 0;
       right: 0;
-      color: var(--cyan);
+      color: var(--blue-light);
       font-size: 1.3rem;
       line-height: 1;
       transition: var(--transition);
-      text-shadow: 0 0 10px var(--glow-cyan);
+      text-shadow: 0 0 10px var(--glow-blue-light);
     }
 
     details[open] summary::after { content: "-"; }
@@ -780,10 +722,10 @@
 
     .footer-brand {
       font-size: 1.5rem;
-      color: var(--cyan);
+      color: var(--blue-light);
       font-weight: 700;
       margin-bottom: 16px;
-      text-shadow: 0 0 10px var(--glow-cyan);
+      text-shadow: 0 0 10px var(--glow-blue-light);
     }
 
     .footer-tagline {
@@ -804,7 +746,7 @@
       color: var(--text-secondary);
     }
 
-    .footer-col a:hover { color: var(--cyan); }
+    .footer-col a:hover { color: var(--blue-light); }
 
     .float-whatsapp {
       position: fixed;
@@ -871,11 +813,11 @@
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy reveal">
-        <h1>Sua empresa não precisa de mais organização. Precisa de estrutura tecnológica.</h1>
+        <h1>Sua empresa não precisa de mais improviso. Precisa de estrutura tecnológica.</h1>
         <p class="subtitle">Desenvolvemos sistemas, automatizamos processos e implementamos infraestrutura para transformar operações desorganizadas em ambientes digitais eficientes, seguros e escaláveis.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#contato">Solicitar diagnóstico técnico</a>
-          <a class="btn btn-secondary" href="#solucoes">Ver soluções</a>
+          <a class="btn btn-secondary" href="#solucoes">Ver como funciona</a>
         </div>
       </div>
       <div class="hero-visual reveal">
@@ -903,11 +845,6 @@
             </div>
           </div>
           <div class="floating-elements">
-            <div class="floating-card">Sistemas</div>
-            <div class="floating-card">Automação</div>
-            <div class="floating-card">Infraestrutura</div>
-            <div class="floating-card">Dados</div>
-            <div class="floating-card">Operação</div>
             <div class="connection-lines">
               <span></span>
             </div>
@@ -917,10 +854,11 @@
     </div>
   </section>
 
-  <section id="quebra-crenca">
+  <section id="quebra-crenca" class="section-dark">
     <div class="container">
       <div class="section-header reveal">
         <h2>O problema não é falta de gestão. É falta de implementação.</h2>
+        <p>Muitas empresas sabem o que precisa melhorar, mas continuam presas em planilhas, tarefas manuais e sistemas desconectados.</p>
       </div>
       <div class="belief-cards">
         <div class="belief-card reveal">
@@ -939,7 +877,7 @@
     </div>
   </section>
 
-  <section id="solucao">
+  <section id="solucao" class="section-dark">
     <div class="container">
       <div class="section-header reveal">
         <h2>Nós implementamos o que outras empresas apenas recomendam.</h2>
@@ -947,20 +885,20 @@
       </div>
       <div class="solution-blocks">
         <div class="solution-block reveal">
-          <i class="fa-solid fa-database"></i>
-          <h3>Dados centralizados</h3>
+          <i class="fa-solid fa-code"></i>
+          <h3>Sistemas que centralizam operação</h3>
         </div>
         <div class="solution-block reveal">
           <i class="fa-solid fa-robot"></i>
-          <h3>Processos automatizados</h3>
-        </div>
-        <div class="solution-block reveal">
-          <i class="fa-solid fa-plug"></i>
-          <h3>Sistemas integrados</h3>
+          <h3>Automação que elimina retrabalho</h3>
         </div>
         <div class="solution-block reveal">
           <i class="fa-solid fa-server"></i>
-          <h3>Infraestrutura estável</h3>
+          <h3>Infraestrutura que sustenta crescimento</h3>
+        </div>
+        <div class="solution-block reveal">
+          <i class="fa-solid fa-plug"></i>
+          <h3>Integração entre ferramentas</h3>
         </div>
       </div>
     </div>
@@ -1006,7 +944,7 @@
     </div>
   </section>
 
-  <section id="diferenciais">
+  <section id="diferenciais" class="section-dark">
     <div class="container">
       <div class="section-header reveal">
         <h2>Tecnologia implementada, não apenas planejada.</h2>
@@ -1032,31 +970,27 @@
     </div>
   </section>
 
-  <section id="autoridade">
+  <section id="autoridade" class="section-dark">
     <div class="container">
       <div class="section-header reveal">
         <h2>Base técnica para operações que precisam funcionar.</h2>
       </div>
       <div class="authority-grid">
         <div class="authority-item reveal">
-          <i class="fa-solid fa-code"></i>
-          <p>Sistemas e integrações</p>
-        </div>
-        <div class="authority-item reveal">
-          <i class="fa-solid fa-plug"></i>
-          <p>APIs e sistemas internos</p>
-        </div>
-        <div class="authority-item reveal">
-          <i class="fa-solid fa-server"></i>
-          <p>Infraestrutura e servidores</p>
-        </div>
-        <div class="authority-item reveal">
-          <i class="fa-solid fa-box"></i>
-          <p>Containers e deploy</p>
+          <i class="fa-solid fa-rocket"></i>
+          <p>Deploy estruturado</p>
         </div>
         <div class="authority-item reveal">
           <i class="fa-solid fa-chart-line"></i>
-          <p>Monitoramento e logs</p>
+          <p>Monitoramento e observabilidade</p>
+        </div>
+        <div class="authority-item reveal">
+          <i class="fa-solid fa-box"></i>
+          <p>Containers e CI/CD</p>
+        </div>
+        <div class="authority-item reveal">
+          <i class="fa-solid fa-plug"></i>
+          <p>Integração entre sistemas</p>
         </div>
         <div class="authority-item reveal">
           <i class="fa-solid fa-shield-alt"></i>
