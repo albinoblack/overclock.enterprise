@@ -3,30 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overclock Enterprise | Tecnologia Estratégica para Empresas</title>
-  <meta name="description" content="A Overclock Enterprise desenvolve sistemas, sites, automações e soluções de infraestrutura para transformar operações desorganizadas em negócios mais eficientes, seguros e escaláveis.">
-  <meta name="keywords" content="consultoria TI, desenvolvimento de sistemas, infraestrutura, automação, organização digital, sites profissionais">
-  <meta name="theme-color" content="#0a0a0a">
+  <title>Overclock Enterprise | Estrutura Tecnológica para Empresas</title>
+  <meta name="description" content="A Overclock Enterprise desenvolve sistemas, automatiza processos e implementa infraestrutura para transformar operações desorganizadas em negócios eficientes, seguros e escaláveis.">
+  <meta name="keywords" content="consultoria TI, desenvolvimento de sistemas, infraestrutura, automação, organização digital, sustentação técnica">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     :root {
-      --bg-dark: #0a0a0a;
-      --navy: #1a365d;
-      --cyan: #00bcd4;
-      --electric-blue: #0066ff;
-      --purple: #6b46c1;
-      --white: #ffffff;
-      --light-gray: #e2e8f0;
-      --dark-gray: #2d3748;
-      --glow: 0 0 20px rgba(0, 188, 212, 0.3);
-      --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.3);
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F8FAFC;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --navy: #0B1120;
+      --blue-tech: #2563EB;
+      --cyan-detail: #06B6D4;
+      --purple-discrete: #7C3AED;
+      --border: #E2E8F0;
+      --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+      --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
       --radius: 8px;
       --radius-lg: 12px;
-      --transition: 0.3s ease;
+      --transition: 0.2s ease;
       --container: 1200px;
     }
 
@@ -34,69 +35,37 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: "Inter", sans-serif;
-      color: var(--white);
-      background: var(--bg-dark);
+      color: var(--text-primary);
+      background: var(--bg-primary);
       line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(0, 188, 212, 0.1), transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(107, 70, 193, 0.1), transparent 50%),
-        linear-gradient(45deg, transparent 49%, rgba(0, 102, 255, 0.05) 50%, transparent 51%);
-      background-size: 100px 100px;
-      z-index: -2;
+      font-size: 16px;
     }
 
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
-    section { padding: 80px 20px; }
+    section { padding: 100px 20px; }
     .container { max-width: var(--container); margin: 0 auto; }
 
     .section-header {
       max-width: 800px;
-      margin-bottom: 40px;
-    }
-
-    .section-header.center {
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 60px;
       text-align: center;
     }
 
-    .section-kicker {
-      display: inline-block;
-      padding: 6px 12px;
-      margin-bottom: 16px;
-      border-radius: 20px;
-      background: rgba(0, 188, 212, 0.1);
-      color: var(--cyan);
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      border: 1px solid rgba(0, 188, 212, 0.2);
-    }
-
     .section-header h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
       line-height: 1.2;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
     }
 
     .section-header p {
-      color: var(--light-gray);
+      color: var(--text-secondary);
       font-size: 1.1rem;
+      line-height: 1.6;
       max-width: 700px;
+      margin: 0 auto;
     }
 
     .btn {
@@ -104,75 +73,62 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 50px;
+      min-height: 48px;
       padding: 0 24px;
       border-radius: var(--radius);
       border: 1px solid transparent;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 500;
       transition: var(--transition);
       cursor: pointer;
       position: relative;
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .btn:hover { transform: translateY(-1px); }
 
     .btn-primary {
-      color: var(--white);
-      background: linear-gradient(135deg, var(--cyan), var(--electric-blue));
-      box-shadow: var(--glow);
+      color: var(--bg-primary);
+      background: var(--blue-tech);
+      box-shadow: var(--shadow-light);
     }
 
     .btn-secondary {
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(0, 188, 212, 0.3);
-      backdrop-filter: blur(10px);
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      border-color: var(--border);
     }
 
     .btn-whatsapp {
-      color: var(--white);
+      color: var(--bg-primary);
       background: linear-gradient(135deg, #20ba5a, #25d366);
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      box-shadow: var(--shadow-light);
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
+      background: var(--bg-primary);
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(0, 188, 212, 0.2);
-      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-light);
       padding: 32px;
-      position: relative;
+      transition: var(--transition);
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: var(--radius-lg);
-      padding: 1px;
-      background: linear-gradient(135deg, var(--cyan), var(--electric-blue));
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      -webkit-mask-composite: xor;
-      z-index: -1;
+    .card:hover {
+      box-shadow: var(--shadow-medium);
+      transform: translateY(-2px);
     }
 
-    .topbar {
+    .header {
       position: sticky;
       top: 0;
-      z-index: 60;
-      padding: 16px 20px;
-      background: rgba(10, 10, 10, 0.9);
+      z-index: 100;
+      padding: 20px 0;
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 188, 212, 0.2);
+      border-bottom: 1px solid var(--border);
     }
 
-    .topbar-inner {
+    .header-inner {
       max-width: var(--container);
       margin: 0 auto;
       display: flex;
@@ -183,7 +139,7 @@
 
     .brand {
       font-size: 1.5rem;
-      color: var(--cyan);
+      color: var(--navy);
       font-weight: 700;
     }
 
@@ -191,18 +147,18 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px 24px;
-      color: var(--light-gray);
+      gap: 10px 32px;
+      color: var(--text-secondary);
       font-size: 0.95rem;
+      font-weight: 500;
     }
 
-    .nav a:hover { color: var(--cyan); }
+    .nav a:hover { color: var(--blue-tech); }
 
     .hero {
       position: relative;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, var(--bg-dark), var(--navy));
-      color: var(--white);
+      padding: 120px 20px;
+      background: var(--bg-secondary);
       overflow: hidden;
     }
 
@@ -213,31 +169,35 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,188,212,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      background:
+        radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.03), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.03), transparent 50%);
       z-index: -1;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 40px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
       align-items: center;
       position: relative;
       z-index: 1;
     }
 
     .hero-copy h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
       line-height: 1.1;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       font-weight: 700;
+      color: var(--text-primary);
     }
 
-    .hero-copy .subheadline {
+    .hero-copy .subtitle {
       max-width: 600px;
-      opacity: 0.9;
+      opacity: 0.8;
       font-size: 1.2rem;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
+      line-height: 1.6;
     }
 
     .hero-cta {
@@ -248,201 +208,365 @@
 
     .hero-visual {
       position: relative;
-      min-height: 400px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 188, 212, 0.2);
+      min-height: 500px;
       display: flex;
       align-items: center;
       justify-content: center;
-      backdrop-filter: blur(10px);
     }
 
-    .hero-visual::before {
+    .floating-cards {
+      position: relative;
+      width: 100%;
+      height: 400px;
+    }
+
+    .floating-card {
+      position: absolute;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-light);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-card:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .floating-card:nth-child(2) {
+      top: 40%;
+      right: 15%;
+      animation-delay: 1s;
+    }
+
+    .floating-card:nth-child(3) {
+      bottom: 30%;
+      left: 20%;
+      animation-delay: 2s;
+    }
+
+    .floating-card:nth-child(4) {
+      bottom: 20%;
+      right: 10%;
+      animation-delay: 3s;
+    }
+
+    .floating-card:nth-child(5) {
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .connection-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .connection-lines::before,
+    .connection-lines::after {
       content: "";
       position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(0, 102, 255, 0.1));
-      border-radius: var(--radius);
-      z-index: -1;
+      background: linear-gradient(45deg, var(--cyan-detail), var(--purple-discrete));
+      opacity: 0.1;
     }
 
-    .hero-indicators {
+    .connection-lines::before {
+      top: 30%;
+      left: 20%;
+      width: 200px;
+      height: 2px;
+      transform: rotate(15deg);
+    }
+
+    .connection-lines::after {
+      bottom: 40%;
+      right: 25%;
+      width: 150px;
+      height: 2px;
+      transform: rotate(-20deg);
+    }
+
+    .mini-dashboard {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .indicator {
-      padding: 6px 12px;
-      border-radius: 20px;
-      background: rgba(0, 188, 212, 0.1);
-      color: var(--cyan);
-      font-size: 0.8rem;
-      font-weight: 500;
-      border: 1px solid rgba(0, 188, 212, 0.2);
-    }
-
-    .hero-mockup {
-      width: 100%;
-      height: 300px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-medium);
+      width: 300px;
+    }
+
+    .dashboard-header {
       display: flex;
       align-items: center;
-      justify-content: center;
-      position: relative;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
     }
 
-    .hero-mockup::after {
-      content: "DASHBOARD / SISTEMAS";
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      background: rgba(0, 188, 212, 0.2);
-      color: var(--cyan);
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 0.7rem;
+    .dashboard-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
-    .problems-grid {
+    .metric {
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--blue-tech);
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .belief-breaker {
+      background: var(--bg-secondary);
+    }
+
+    .belief-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
     }
 
-    .problem-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 24px;
+    .belief-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 188, 212, 0.2);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(10px);
-    }
-
-    .problem-item i {
-      color: var(--cyan);
-      font-size: 1.5rem;
-      margin-top: 4px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 24px;
-    }
-
-    .service-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(0, 188, 212, 0.2);
-      box-shadow: var(--shadow);
       padding: 32px;
-      transition: var(--transition);
-      position: relative;
+      box-shadow: var(--shadow-light);
+      text-align: center;
     }
 
-    .service-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: var(--radius-lg);
-      padding: 1px;
-      background: linear-gradient(135deg, var(--cyan), var(--electric-blue));
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      -webkit-mask-composite: xor;
-      opacity: 0;
-      transition: opacity var(--transition);
-      z-index: -1;
-    }
-
-    .service-card:hover::before { opacity: 1; }
-
-    .service-card h3 {
-      font-size: 1.4rem;
+    .belief-card i {
+      color: var(--blue-tech);
+      font-size: 2rem;
       margin-bottom: 16px;
-      color: var(--white);
     }
 
-    .authority-grid {
+    .belief-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .solution-blocks {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 24px;
     }
 
-    .authority-item {
-      text-align: center;
-      padding: 24px;
+    .solution-block {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 188, 212, 0.2);
-      backdrop-filter: blur(10px);
+      padding: 24px;
+      box-shadow: var(--shadow-light);
+      text-align: center;
     }
 
-    .authority-item i {
-      color: var(--cyan);
-      font-size: 2rem;
-      margin-bottom: 16px;
+    .solution-block i {
+      color: var(--cyan-detail);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
     }
 
-    .process-grid {
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-light);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-medium);
+      transform: translateY(-4px);
+    }
+
+    .service-card i {
+      color: var(--blue-tech);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .service-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .differential {
+      background: var(--bg-secondary);
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .comparison-col {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-light);
+    }
+
+    .comparison-col h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .comparison-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .comparison-col li {
+      padding: 8px 0;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-col li:last-child { border-bottom: none; }
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
 
-    .process-step {
-      text-align: center;
-      padding: 32px 24px;
+    .authority-item {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 188, 212, 0.2);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(10px);
+      padding: 24px;
+      box-shadow: var(--shadow-light);
+      text-align: center;
+    }
+
+    .authority-item i {
+      color: var(--purple-discrete);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .method-timeline {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 40px;
       position: relative;
     }
 
-    .process-step::after {
+    .timeline-item::after {
       content: "";
       position: absolute;
-      top: 50%;
-      right: -12px;
-      width: 24px;
-      height: 2px;
-      background: var(--cyan);
-      transform: translateY(-50%);
+      left: 24px;
+      top: 60px;
+      bottom: -40px;
+      width: 2px;
+      background: var(--border);
     }
 
-    .process-step:last-child::after { display: none; }
+    .timeline-item:last-child::after { display: none; }
 
-    .process-step .number {
-      display: inline-flex;
+    .timeline-number {
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--cyan), var(--electric-blue));
-      color: var(--white);
-      font-size: 1.5rem;
+      background: var(--blue-tech);
+      color: var(--bg-primary);
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 16px;
-      box-shadow: var(--glow);
+      flex-shrink: 0;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .timeline-content p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .target-audience {
+      background: var(--bg-secondary);
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .audience-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-light);
+    }
+
+    .audience-card i {
+      color: var(--cyan-detail);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
     }
 
     .faq-grid {
@@ -451,11 +575,11 @@
     }
 
     details {
-      border-top: 1px solid rgba(0, 188, 212, 0.2);
-      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
     }
 
-    details:last-child { border-bottom: 1px solid rgba(0, 188, 212, 0.2); }
+    details:last-child { border-bottom: 1px solid var(--border); }
 
     summary {
       list-style: none;
@@ -463,7 +587,8 @@
       font-weight: 600;
       position: relative;
       padding-right: 30px;
-      color: var(--white);
+      color: var(--text-primary);
+      font-size: 1.1rem;
     }
 
     summary::-webkit-details-marker { display: none; }
@@ -471,18 +596,24 @@
     summary::after {
       content: "+";
       position: absolute;
-      top: -2px;
+      top: 0;
       right: 0;
-      color: var(--cyan);
+      color: var(--blue-tech);
       font-size: 1.3rem;
       line-height: 1;
+      transition: var(--transition);
     }
 
     details[open] summary::after { content: "-"; }
 
+    .details-content {
+      margin-top: 12px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
     .cta-section {
-      background: linear-gradient(135deg, var(--navy), var(--bg-dark));
-      color: var(--white);
+      background: var(--bg-secondary);
       text-align: center;
     }
 
@@ -492,65 +623,74 @@
     }
 
     .cta-panel h2 {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
     }
 
     .cta-panel p {
-      opacity: 0.9;
+      opacity: 0.8;
       margin-bottom: 32px;
+      color: var(--text-secondary);
     }
 
     footer {
-      padding: 40px 20px;
-      background: var(--bg-dark);
-      color: var(--light-gray);
-      border-top: 1px solid rgba(0, 188, 212, 0.2);
+      padding: 60px 20px;
+      background: var(--navy);
+      color: #94A3B8;
+      border-top: 1px solid var(--border);
     }
 
     .footer-wrap {
       max-width: var(--container);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr;
-      gap: 24px;
+      grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr;
+      gap: 40px;
       align-items: start;
     }
 
     .footer-brand {
       font-size: 1.5rem;
-      color: var(--cyan);
+      color: var(--bg-primary);
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-tagline {
+      color: #CBD5E1;
+      margin-bottom: 20px;
     }
 
     .footer-col h3 {
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: var(--bg-primary);
     }
 
     .footer-col a,
     .footer-col p {
       display: block;
       margin-bottom: 8px;
-      color: var(--light-gray);
+      color: #94A3B8;
     }
+
+    .footer-col a:hover { color: var(--cyan-detail); }
 
     .float-whatsapp {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 60px;
-      height: 60px;
+      right: 24px;
+      bottom: 24px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       background: linear-gradient(135deg, #20ba5a, #25d366);
-      color: var(--white);
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-      z-index: 80;
-      font-size: 1.7rem;
+      color: var(--bg-primary);
+      box-shadow: var(--shadow-medium);
+      z-index: 100;
+      font-size: 1.5rem;
     }
 
     .reveal {
@@ -565,105 +705,105 @@
     }
 
     @media (max-width: 768px) {
-      section { padding: 60px 20px; }
-      .hero { padding: 80px 20px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      section { padding: 80px 20px; }
+      .hero { padding: 100px 20px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
       .hero-cta { flex-direction: column; }
       .btn { width: 100%; }
       .services-grid,
       .authority-grid,
-      .process-grid { grid-template-columns: 1fr; }
-      .process-step::after { display: none; }
-      .footer-wrap { grid-template-columns: 1fr; gap: 20px; }
+      .audience-grid,
+      .belief-cards,
+      .solution-blocks { grid-template-columns: 1fr; }
+      .comparison { grid-template-columns: 1fr; }
+      .timeline-item { flex-direction: column; text-align: center; }
+      .timeline-item::after { display: none; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .floating-cards { height: 300px; }
+      .mini-dashboard { width: 250px; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
+  <header class="header">
+    <div class="header-inner">
       <div class="brand">Overclock Enterprise</div>
       <nav class="nav">
         <a href="#solucoes">Soluções</a>
-        <a href="#processo">Processo</a>
+        <a href="#metodo">Método</a>
+        <a href="#diferenciais">Diferenciais</a>
         <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
       </nav>
+      <a class="btn btn-primary" href="#contato">Solicitar diagnóstico</a>
     </div>
   </header>
 
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy reveal">
-        <h1>Sistemas, automações e infraestrutura para empresas que querem operar em outro nível</h1>
-        <p class="subheadline">A Overclock Enterprise transforma processos manuais, sistemas improvisados e operações desorganizadas em ambientes digitais integrados, seguros e escaláveis.</p>
+        <h1>Sua empresa não precisa de mais improviso. Precisa de estrutura tecnológica.</h1>
+        <p class="subtitle">A Overclock Enterprise desenvolve sistemas, automatiza processos e implementa infraestrutura para transformar operações desorganizadas em negócios eficientes, seguros e escaláveis.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#contato">Solicitar diagnóstico técnico</a>
           <a class="btn btn-secondary" href="#solucoes">Ver soluções</a>
         </div>
       </div>
       <div class="hero-visual reveal">
-        <div class="hero-indicators">
-          <span class="indicator">Sistemas</span>
-          <span class="indicator">Automação</span>
-          <span class="indicator">DevOps</span>
-          <span class="indicator">Infraestrutura</span>
-          <span class="indicator">Sites Corporativos</span>
-        </div>
-        <div class="hero-mockup">
-          <i class="fa-solid fa-code" style="font-size: 4rem; color: rgba(255,255,255,0.3);"></i>
+        <div class="floating-cards">
+          <div class="floating-card">Sistemas</div>
+          <div class="floating-card">Automação</div>
+          <div class="floating-card">Infraestrutura</div>
+          <div class="floating-card">Dados</div>
+          <div class="floating-card">Operação</div>
+          <div class="connection-lines"></div>
+          <div class="mini-dashboard">
+            <div class="dashboard-header">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Dashboard Operacional</span>
+            </div>
+            <div class="dashboard-metrics">
+              <div class="metric">
+                <div class="metric-value">87%</div>
+                <div class="metric-label">Processos automatizados</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">94%</div>
+                <div class="metric-label">Dados centralizados</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">99.9%</div>
+                <div class="metric-label">Infraestrutura monitorada</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">Fluxos integrados</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="problemas">
+  <section id="quebra-crenca">
     <div class="container">
-      <div class="section-header center reveal">
-        <span class="section-kicker">Problemas comuns</span>
-        <h2>Sua operação ainda depende de improviso?</h2>
+      <div class="section-header reveal">
+        <h2>O problema não é apenas falta de gestão. É falta de implementação.</h2>
+        <p>Muitas empresas sabem o que precisa melhorar, mas continuam presas em planilhas, tarefas manuais, sistemas desconectados e processos sem padrão. Sem uma base tecnológica bem construída, a organização não se sustenta.</p>
       </div>
-      <div class="problems-grid">
-        <div class="problem-item reveal">
+      <div class="belief-cards">
+        <div class="belief-card reveal">
           <i class="fa-solid fa-file-excel"></i>
-          <div>
-            <h3>Planilhas soltas e dados descentralizados</h3>
-            <p>Informações dispersas, difícil controle e risco de erros manuais.</p>
-          </div>
+          <h3>Diagnóstico sem execução não muda operação</h3>
         </div>
-        <div class="problem-item reveal">
+        <div class="belief-card reveal">
           <i class="fa-solid fa-hand-paper"></i>
-          <div>
-            <h3>Processos manuais que consomem tempo</h3>
-            <p>Perda de produtividade com tarefas repetitivas e passíveis de automação.</p>
-          </div>
+          <h3>Processos sem sistema viram retrabalho</h3>
         </div>
-        <div class="problem-item reveal">
+        <div class="belief-card reveal">
           <i class="fa-solid fa-link"></i>
-          <div>
-            <h3>Sistemas que não conversam entre si</h3>
-            <p>Ferramentas desconectadas, duplicação de esforços e ineficiência.</p>
-          </div>
-        </div>
-        <div class="problem-item reveal">
-          <i class="fa-solid fa-globe"></i>
-          <div>
-            <h3>Sites antigos, lentos ou pouco profissionais</h3>
-            <p>Presença digital que não representa a empresa adequadamente.</p>
-          </div>
-        </div>
-        <div class="problem-item reveal">
-          <i class="fa-solid fa-server"></i>
-          <div>
-            <h3>Infraestrutura sem monitoramento</h3>
-            <p>Riscos de downtime e falta de previsibilidade operacional.</p>
-          </div>
-        </div>
-        <div class="problem-item reveal">
-          <i class="fa-solid fa-folder-open"></i>
-          <div>
-            <h3>Falta de padronização digital</h3>
-            <p>Processos inconsistentes e dificuldade de escalabilidade.</p>
-          </div>
+          <h3>Crescimento sem estrutura vira caos</h3>
         </div>
       </div>
     </div>
@@ -671,11 +811,26 @@
 
   <section id="solucao">
     <div class="container">
-      <div class="card reveal">
-        <div class="section-header">
-          <span class="section-kicker">Nossa abordagem</span>
-          <h2>Tecnologia bem implementada reduz caos, retrabalho e perda de controle</h2>
-          <p>Nossa atuação combina diagnóstico, desenvolvimento, infraestrutura e sustentação para criar soluções digitais que funcionam na prática — não apenas sistemas bonitos, mas tecnologia útil para a operação.</p>
+      <div class="section-header reveal">
+        <h2>Nós implementamos o que consultorias comuns apenas recomendam.</h2>
+        <p>Unimos visão operacional, desenvolvimento de software, automação e infraestrutura para construir soluções que funcionam no dia a dia da empresa.</p>
+      </div>
+      <div class="solution-blocks">
+        <div class="solution-block reveal">
+          <i class="fa-solid fa-database"></i>
+          <h3>Centralização de dados</h3>
+        </div>
+        <div class="solution-block reveal">
+          <i class="fa-solid fa-robot"></i>
+          <h3>Automação de rotinas</h3>
+        </div>
+        <div class="solution-block reveal">
+          <i class="fa-solid fa-plug"></i>
+          <h3>Integração entre ferramentas</h3>
+        </div>
+        <div class="solution-block reveal">
+          <i class="fa-solid fa-tools"></i>
+          <h3>Sustentação técnica contínua</h3>
         </div>
       </div>
     </div>
@@ -683,8 +838,7 @@
 
   <section id="solucoes">
     <div class="container">
-      <div class="section-header center reveal">
-        <span class="section-kicker">Nossas soluções</span>
+      <div class="section-header reveal">
         <h2>Soluções de TI para estruturar e escalar sua empresa</h2>
       </div>
       <div class="services-grid">
@@ -694,11 +848,6 @@
           <p>Sistemas web, ERPs, dashboards, APIs e aplicações internas para centralizar informações, automatizar rotinas e melhorar a gestão.</p>
         </article>
         <article class="service-card reveal">
-          <i class="fa-solid fa-globe"></i>
-          <h3>Sites Corporativos e Landing Pages</h3>
-          <p>Sites profissionais, responsivos e rápidos para apresentar sua empresa com autoridade e converter visitantes em contatos qualificados.</p>
-        </article>
-        <article class="service-card reveal">
           <i class="fa-solid fa-robot"></i>
           <h3>Automação de Processos</h3>
           <p>Fluxos automatizados, integrações entre ferramentas, formulários inteligentes e redução de tarefas repetitivas.</p>
@@ -706,7 +855,7 @@
         <article class="service-card reveal">
           <i class="fa-solid fa-cogs"></i>
           <h3>Infraestrutura e DevOps</h3>
-          <p>Ambientes estáveis, deploy, containers, CI/CD, monitoramento, backups e boas práticas para sustentar sistemas com segurança.</p>
+          <p>Ambientes estáveis, deploy estruturado, containers, CI/CD, monitoramento, backups e boas práticas para sustentar sistemas com segurança.</p>
         </article>
         <article class="service-card reveal">
           <i class="fa-solid fa-folder-tree"></i>
@@ -714,81 +863,126 @@
           <p>Estruturação de arquivos, processos, ferramentas colaborativas e padrões digitais para empresas que precisam sair da bagunça operacional.</p>
         </article>
         <article class="service-card reveal">
+          <i class="fa-solid fa-globe"></i>
+          <h3>Sites Corporativos e Aplicações Web</h3>
+          <p>Sites profissionais, rápidos e responsivos para apresentar sua empresa com autoridade, performance e conversão.</p>
+        </article>
+        <article class="service-card reveal">
           <i class="fa-solid fa-tools"></i>
           <h3>Suporte e Evolução Contínua</h3>
-          <p>Manutenção, melhorias, correções e acompanhamento técnico para garantir evolução constante.</p>
+          <p>Manutenção, melhorias, correções e acompanhamento técnico para garantir que a tecnologia continue evoluindo junto com o negócio.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="diferenciais">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Tecnologia aplicada ao negócio, não apenas código.</h2>
+        <p>Diferente de fornecedores que entregam apenas uma peça isolada, a Overclock Enterprise pensa a estrutura completa: processo, sistema, infraestrutura, dados e sustentação.</p>
+      </div>
+      <div class="comparison reveal">
+        <div class="comparison-col">
+          <h3>Consultorias genéricas</h3>
+          <ul>
+            <li>Entregam diagnóstico</li>
+            <li>Dependem de execução externa</li>
+            <li>Focam em documento e recomendação</li>
+            <li>Pouca profundidade técnica</li>
+          </ul>
+        </div>
+        <div class="comparison-col">
+          <h3>Overclock Enterprise</h3>
+          <ul>
+            <li>Diagnostica e implementa</li>
+            <li>Desenvolve sistemas e automações</li>
+            <li>Estrutura infraestrutura e operação</li>
+            <li>Sustenta e evolui continuamente</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="autoridade">
     <div class="container">
-      <div class="section-header center reveal">
-        <span class="section-kicker">Expertise técnica</span>
-        <h2>Expertise técnica aplicada ao negócio</h2>
-        <p>Unimos visão operacional com conhecimento técnico para entregar soluções que não dependem de improviso.</p>
+      <div class="section-header reveal">
+        <h2>Base técnica para operações que precisam funcionar.</h2>
       </div>
       <div class="authority-grid">
         <div class="authority-item reveal">
           <i class="fa-solid fa-code"></i>
-          <h3>Desenvolvimento web e integrações</h3>
+          <p>Desenvolvimento web e integrações</p>
+        </div>
+        <div class="authority-item reveal">
+          <i class="fa-solid fa-plug"></i>
+          <p>APIs e sistemas internos</p>
         </div>
         <div class="authority-item reveal">
           <i class="fa-solid fa-server"></i>
-          <h3>Infraestrutura, servidores e ambientes de aplicação</h3>
+          <p>Infraestrutura, servidores e ambientes de aplicação</p>
         </div>
         <div class="authority-item reveal">
           <i class="fa-solid fa-box"></i>
-          <h3>Containers, deploy e CI/CD</h3>
+          <p>Deploy, containers e CI/CD</p>
         </div>
         <div class="authority-item reveal">
           <i class="fa-solid fa-chart-line"></i>
-          <h3>Monitoramento, logs e observabilidade</h3>
+          <p>Monitoramento, logs e observabilidade</p>
         </div>
         <div class="authority-item reveal">
           <i class="fa-solid fa-shield-alt"></i>
-          <h3>Backups, segurança e continuidade</h3>
+          <p>Backups, segurança e continuidade</p>
         </div>
         <div class="authority-item reveal">
           <i class="fa-solid fa-sitemap"></i>
-          <h3>Organização digital e automação de processos</h3>
+          <p>Organização digital e automação de processos</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="processo">
+  <section id="metodo">
     <div class="container">
-      <div class="section-header center reveal">
-        <span class="section-kicker">Como trabalhamos</span>
+      <div class="section-header reveal">
         <h2>Do diagnóstico à sustentação</h2>
       </div>
-      <div class="process-grid">
-        <div class="process-step reveal">
-          <div class="number">1</div>
-          <h3>Diagnóstico técnico</h3>
-          <p>Entendemos o cenário atual, gargalos, ferramentas usadas e necessidades reais.</p>
+      <div class="method-timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-number">1</div>
+          <div class="timeline-content">
+            <h3>Diagnóstico técnico</h3>
+            <p>Mapeamos gargalos, processos, ferramentas, riscos e oportunidades de automação.</p>
+          </div>
         </div>
-        <div class="process-step reveal">
-          <div class="number">2</div>
-          <h3>Planejamento da solução</h3>
-          <p>Definimos prioridades, escopo, arquitetura e caminho técnico mais eficiente.</p>
+        <div class="timeline-item reveal">
+          <div class="timeline-number">2</div>
+          <div class="timeline-content">
+            <h3>Planejamento estrutural</h3>
+            <p>Definimos prioridades, arquitetura, escopo e caminho de implementação mais eficiente.</p>
+          </div>
         </div>
-        <div class="process-step reveal">
-          <div class="number">3</div>
-          <h3>Implementação</h3>
-          <p>Desenvolvemos, configuramos e integramos as soluções necessárias.</p>
+        <div class="timeline-item reveal">
+          <div class="timeline-number">3</div>
+          <div class="timeline-content">
+            <h3>Implementação</h3>
+            <p>Desenvolvemos sistemas, configuramos ambientes, integramos ferramentas e automatizamos fluxos.</p>
+          </div>
         </div>
-        <div class="process-step reveal">
-          <div class="number">4</div>
-          <h3>Validação e entrega</h3>
-          <p>Testamos, ajustamos e entregamos a solução pronta para uso.</p>
+        <div class="timeline-item reveal">
+          <div class="timeline-number">4</div>
+          <div class="timeline-content">
+            <h3>Validação</h3>
+            <p>Testamos, ajustamos e garantimos que a solução funcione na operação real.</p>
+          </div>
         </div>
-        <div class="process-step reveal">
-          <div class="number">5</div>
-          <h3>Suporte e evolução</h3>
-          <p>Acompanhamos, monitoramos e evoluímos conforme o crescimento da empresa.</p>
+        <div class="timeline-item reveal">
+          <div class="timeline-number">5</div>
+          <div class="timeline-content">
+            <h3>Sustentação e evolução</h3>
+            <p>Acompanhamos, corrigimos, otimizamos e evoluímos a estrutura conforme a empresa cresce.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -797,56 +991,88 @@
   <section class="cta-section">
     <div class="container">
       <div class="cta-panel reveal">
-        <span class="section-kicker">Diagnóstico gratuito</span>
-        <h2>Antes de contratar tecnologia, descubra onde sua empresa está perdendo eficiência.</h2>
-        <p>Realizamos um diagnóstico inicial para identificar oportunidades de melhoria e propor soluções alinhadas à sua realidade.</p>
+        <h2>Antes de contratar mais ferramentas, entenda onde sua empresa está perdendo eficiência.</h2>
+        <p>Um diagnóstico técnico mostra quais processos podem ser automatizados, quais dados precisam ser centralizados e quais sistemas realmente fazem sentido.</p>
         <a class="btn btn-whatsapp" href="https://wa.me/5512999999999">Solicitar diagnóstico técnico</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="publico">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Para empresas que querem sair do improviso digital</h2>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-file-excel"></i>
+          <p>Empresas que operam com planilhas soltas</p>
+        </div>
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-comments"></i>
+          <p>Negócios que dependem demais do WhatsApp</p>
+        </div>
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-chart-line"></i>
+          <p>Prestadores de serviço em crescimento</p>
+        </div>
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-user-md"></i>
+          <p>Clínicas, consultórios e empresas locais</p>
+        </div>
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-building"></i>
+          <p>Pequenas e médias empresas sem equipe interna de TI</p>
+        </div>
+        <div class="audience-card reveal">
+          <i class="fa-solid fa-plug"></i>
+          <p>Empresas que precisam integrar ferramentas e melhorar controle</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="faq">
     <div class="container">
-      <div class="section-header center reveal">
-        <span class="section-kicker">Perguntas frequentes</span>
-        <h2>Dúvidas comuns sobre nossos serviços</h2>
+      <div class="section-header reveal">
+        <h2>Perguntas frequentes</h2>
       </div>
       <div class="faq-grid reveal">
         <details>
           <summary>A Overclock Enterprise cria apenas sites?</summary>
-          <p>Não. Sites são apenas uma das frentes. Atuamos também com sistemas, automações, infraestrutura, organização digital e suporte técnico.</p>
+          <div class="details-content">
+            <p>Não. Sites são apenas uma das frentes. Atuamos com sistemas, automações, infraestrutura, organização digital, suporte técnico e evolução contínua.</p>
+          </div>
         </details>
         <details>
           <summary>Vocês desenvolvem sistemas sob medida?</summary>
-          <p>Sim. Avaliamos a necessidade da empresa e propomos soluções sob medida, desde sistemas internos até integrações e dashboards.</p>
+          <div class="details-content">
+            <p>Sim. Avaliamos a necessidade da empresa e desenvolvemos soluções sob medida, como sistemas internos, ERPs, dashboards, APIs e integrações.</p>
+          </div>
         </details>
         <details>
-          <summary>Atendem empresas pequenas?</summary>
-          <p>Sim. Nosso foco é ajudar empresas que precisam sair do improviso e estruturar melhor sua operação digital.</p>
+          <summary>Minha empresa é pequena. Faz sentido contratar?</summary>
+          <div class="details-content">
+            <p>Sim, principalmente se a operação já depende de planilhas, WhatsApp, tarefas manuais ou ferramentas desconectadas. A estrutura pode começar pequena e evoluir por etapas.</p>
+          </div>
         </details>
         <details>
-          <summary>Vocês trabalham com manutenção mensal?</summary>
-          <p>Sim. Podemos atuar com projetos pontuais ou contratos recorrentes de suporte, manutenção e evolução.</p>
+          <summary>Vocês oferecem manutenção mensal?</summary>
+          <div class="details-content">
+            <p>Sim. Além de projetos pontuais, podemos atuar com suporte recorrente, manutenção, melhorias, monitoramento e evolução técnica.</p>
+          </div>
         </details>
         <details>
-          <summary>A empresa precisa já ter equipe de TI?</summary>
-          <p>Não. Podemos atuar como apoio técnico externo para empresas que ainda não possuem equipe interna.</p>
+          <summary>Preciso ter uma equipe de TI interna?</summary>
+          <div class="details-content">
+            <p>Não. Podemos atuar como apoio técnico externo para empresas que ainda não possuem equipe interna ou que precisam complementar sua capacidade técnica.</p>
+          </div>
         </details>
         <details>
-          <summary>Quanto tempo leva para criar um site?</summary>
-          <p>O tempo varia conforme a complexidade, mas sites corporativos simples levam de 2 a 4 semanas. Consultamos prazos específicos no diagnóstico.</p>
-        </details>
-        <details>
-          <summary>Vocês desenvolvem sistemas em etapas?</summary>
-          <p>Sim. Preferimos abordagens ágeis, entregando funcionalidades em etapas para validação e ajustes contínuos.</p>
-        </details>
-        <details>
-          <summary>Posso começar com uma solução pequena e evoluir depois?</summary>
-          <p>Sim. Muitas empresas começam com automações simples ou organização digital e expandem para sistemas completos conforme crescem.</p>
-        </details>
-        <details>
-          <summary>Vocês oferecem suporte mensal?</summary>
-          <p>Sim. Temos planos de suporte mensal para monitoramento, manutenção e melhorias contínuas.</p>
+          <summary>Vocês trabalham com infraestrutura e DevOps?</summary>
+          <div class="details-content">
+            <p>Sim. Atuamos com ambientes de aplicação, deploy, containers, CI/CD, monitoramento, backups e boas práticas para operação estável.</p>
+          </div>
         </details>
       </div>
     </div>
@@ -855,9 +1081,9 @@
   <section class="cta-section">
     <div class="container">
       <div class="cta-panel reveal">
-        <h2>Pronto para tirar sua empresa do improviso digital?</h2>
-        <p>Fale com a Overclock Enterprise e veja como sistemas, automações e infraestrutura podem tornar sua operação mais eficiente, segura e escalável.</p>
-        <a class="btn btn-whatsapp" href="https://wa.me/5512999999999">Falar no WhatsApp</a>
+        <h2>Pronto para transformar improviso em estrutura tecnológica?</h2>
+        <p>Fale com a Overclock Enterprise e descubra como sistemas, automações e infraestrutura podem tornar sua empresa mais eficiente, segura e escalável.</p>
+        <a class="btn btn-whatsapp" href="https://wa.me/5512999999999">Falar com a Overclock Enterprise</a>
       </div>
     </div>
   </section>
@@ -866,13 +1092,13 @@
     <div class="footer-wrap">
       <div>
         <div class="footer-brand">Overclock Enterprise</div>
-        <p>Tecnologia, sistemas e organização digital para empresas</p>
+        <p class="footer-tagline">Sistemas, automação, infraestrutura e organização digital para empresas.</p>
       </div>
       <div class="footer-col">
         <h3>Navegação</h3>
-        <a href="#inicio">Início</a>
         <a href="#solucoes">Soluções</a>
-        <a href="#processo">Processo</a>
+        <a href="#metodo">Método</a>
+        <a href="#diferenciais">Diferenciais</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer-col">
@@ -883,9 +1109,9 @@
       <div class="footer-col">
         <h3>Serviços</h3>
         <p>Desenvolvimento de Sistemas</p>
-        <p>Sites Corporativos</p>
-        <p>Infraestrutura e DevOps</p>
         <p>Automação de Processos</p>
+        <p>Infraestrutura e DevOps</p>
+        <p>Organização Digital</p>
       </div>
     </div>
   </footer>
