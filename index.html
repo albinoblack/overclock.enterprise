@@ -772,12 +772,26 @@
       margin-bottom: 12px;
     }
 
-    .float-whatsapp,
+    .float-whatsapp
+    {
+      position: fixed;
+      right: 28px;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      z-index: 120;
+      border: 1px solid rgba(255,255,255,.18);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 18px 50px rgba(0,0,0,.32);
+    }
     .ai-chat-button {
       position: fixed;
       right: 22px;
-      width: 56px;
-      height: 56px;
+      width: 70px;
+      height: 70px;
       display: grid;
       place-items: center;
       border-radius: 999px;
@@ -791,7 +805,7 @@
     .float-whatsapp {
       bottom: 22px;
       background: linear-gradient(135deg, #16A34A, #22C55E);
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     .ai-chat-button {
@@ -809,8 +823,8 @@
     }
 
     .ai-chat-avatar {
-      width: 42px;
-      height: 42px;
+      width: 60px;
+      height: 60px;
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.18);
@@ -1812,14 +1826,14 @@
   </main>
 
   <button class="ai-chat-button" onclick="toggleAiChat()" aria-label="Abrir assistente virtual OVER">
-    <img src="Over_IA.gif" alt="Avatar da OVER" />
+    <img src="Over_IA.png" alt="Avatar da OVER" />
   </button>
 
   <div class="ai-chat-window" id="aiChatWindow">
     <div class="ai-chat-header">
       <div style="display:flex;align-items:center;gap:10px;">
         <div class="ai-chat-avatar">
-          <img src="Over_IA.gif" alt="OVER IA" />
+          <img src="Over_IA.png" alt="OVER IA" />
         </div>
         <div>
           <strong>OVER</strong>
