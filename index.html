@@ -245,6 +245,8 @@
       display: flex;
       align-items: center;
       padding: 86px 0 70px;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-grid {
@@ -252,6 +254,32 @@
       grid-template-columns: 1.05fr .95fr;
       gap: 54px;
       align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .particle-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle-bg canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #problema {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #problema > .container {
+      position: relative;
+      z-index: 1;
     }
 
     .hero h1 {
@@ -1247,6 +1275,7 @@
 
   <main id="top">
     <section class="hero">
+      <div class="particle-bg"><canvas id="heroParticles"></canvas></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <div class="eyebrow">OVER • DevOps • Automação • Infraestrutura</div>
@@ -1296,7 +1325,7 @@
                 Over • Inteligência operacional
               </div>
               <div class="over-image">
-                <img src="1c7c2291-c549-4faf-99d5-883b03606545.png" alt="over, a IA da Overclock Enterprise" />
+                <img src="Over_IA.gif" alt="OVER, a IA da Overclock Enterprise" />
               </div>
             </div>
 
@@ -1345,6 +1374,7 @@
     </section>
 
     <section id="problema">
+      <div class="particle-bg"><canvas id="problemParticles"></canvas></div>
       <div class="container">
         <div class="section-header reveal">
           <div class="eyebrow">Diagnóstico real</div>
@@ -1782,14 +1812,14 @@
   </main>
 
   <button class="ai-chat-button" onclick="toggleAiChat()" aria-label="Abrir assistente virtual OVER">
-    <img src="1c7c2291-c549-4faf-99d5-883b03606545.png" alt="Avatar da OVER" />
+    <img src="Over_IA.gif" alt="Avatar da OVER" />
   </button>
 
   <div class="ai-chat-window" id="aiChatWindow">
     <div class="ai-chat-header">
       <div style="display:flex;align-items:center;gap:10px;">
         <div class="ai-chat-avatar">
-          <img src="1c7c2291-c549-4faf-99d5-883b03606545.png" alt="OVER IA" />
+          <img src="Over_IA.gif" alt="OVER IA" />
         </div>
         <div>
           <strong>OVER</strong>
@@ -1801,7 +1831,7 @@
 
     <!-- <div class="ai-chat-banner">
       <div class="ai-chat-avatar">
-        <img src="1c7c2291-c549-4faf-99d5-883b03606545.png" alt="OVER IA" />
+        <img src="Over_IA.gif" alt="OVER IA" />
       </div>
       <div>
         <strong>OVER está pronta para te ajudar</strong>
@@ -1877,6 +1907,70 @@
   </footer>
 
   <script>
+    function initNetworkParticles(canvasId, count = 60) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      let points = [];
+
+      function resize() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        points = [];
+        for (let i = 0; i < count; i++) {
+          points.push({
+            x: Math.random() * rect.width,
+            y: Math.random() * rect.height,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            r: Math.random() * 1.6 + 1,
+          });
+        }
+      }
+
+      function draw() {
+        const W = canvas.width;
+        const H = canvas.height;
+        ctx.clearRect(0, 0, W, H);
+        points.forEach((p) => {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+        });
+
+        for (let i = 0; i < points.length; i++) {
+          for (let j = i + 1; j < points.length; j++) {
+            const dx = points[i].x - points[j].x;
+            const dy = points[i].y - points[j].y;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 120) {
+              ctx.strokeStyle = `rgba(6, 182, 212, ${(0.24 * (1 - d / 120)).toFixed(2)})`;
+              ctx.lineWidth = 0.6;
+              ctx.beginPath();
+              ctx.moveTo(points[i].x, points[i].y);
+              ctx.lineTo(points[j].x, points[j].y);
+              ctx.stroke();
+            }
+          }
+          ctx.beginPath();
+          ctx.arc(points[i].x, points[i].y, points[i].r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(6, 182, 212, 0.8)";
+          ctx.fill();
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      resize();
+      window.addEventListener("resize", resize);
+      draw();
+    }
+
+    initNetworkParticles("heroParticles", 72);
+    initNetworkParticles("problemParticles", 52);
+
     function toggleMenu() {
       document.getElementById("mainNav").classList.toggle("open");
     }
