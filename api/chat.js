@@ -233,10 +233,7 @@ Use naturalmente:
 ━━━━━━━━━━━━━━━━━━━━━━━
 🎯 FRASE INICIAL
 ━━━━━━━━━━━━━━━━━━━━━━━
-
-Sempre comece com:
-
-"Descreva como sua empresa funciona hoje. Vou identificar possíveis gargalos técnicos."
+Sobre frase inicial, quero que aja de forma humana, mas sem puxar papo.
 `;
 
     const response = await fetch("https://api.openai.com/v1/responses", {
