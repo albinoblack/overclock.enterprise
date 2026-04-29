@@ -25,27 +25,29 @@
 
   <style>
     :root {
-      --bg: #0B1120;
-      --bg-deep: #020617;
-      --bg-light: #F8FAFC;
-      --surface: #FFFFFF;
-      --surface-2: #F8FAFC;
-      --blue: #2563EB;
-      --cyan: #06B6D4;
-      --cyan-soft: rgba(6, 182, 212, .16);
-      --text: #0F172A;
-      --text-light: #E5E7EB;
-      --muted: #475569;
-      --border: #E2E8F0;
-      --danger: #F97316;
-      --success: #22C55E;
-      --shadow: 0 24px 80px rgba(15, 23, 42, .08);
-      --shadow-soft: 0 16px 40px rgba(15, 23, 42, .08);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --container: 1180px;
-      --transition: 180ms ease;
-    }
+  --bg: #0B1120;
+  --bg-deep: #020617;
+  --bg-light: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-2: #F8FAFC;
+  --blue: #2563EB;
+  --cyan: #06B6D4;
+  --cyan-soft: rgba(6, 182, 212, .16);
+  --text: #0F172A;
+  --text-light: #F8FAFC;
+  --text-secondary-dark: #CBD5E1;
+  --text-muted-dark: #94A3B8;
+  --muted: #475569;
+  --border: #E2E8F0;
+  --border-dark: rgba(226, 232, 240, .18);
+  --success: #22C55E;
+  --shadow: 0 24px 80px rgba(15, 23, 42, .08);
+  --shadow-soft: 0 16px 40px rgba(15, 23, 42, .08);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --container: 1180px;
+  --transition: 180ms ease;
+}
 
     * {
       box-sizing: border-box;
@@ -1317,6 +1319,293 @@
       }
     }
 
+/* ===== CORREÇÃO DE CONTRASTE EM FUNDO ESCURO ===== */
+
+.header .brand {
+  color: #F8FAFC;
+}
+
+.header .nav {
+  color: #CBD5E1;
+}
+
+.header .nav a {
+  color: #CBD5E1;
+  opacity: 1;
+}
+
+.header .nav a:hover {
+  color: var(--cyan);
+}
+
+.hero h1 {
+  color: #F8FAFC;
+}
+
+.hero-copy p {
+  color: #CBD5E1;
+  opacity: 1;
+}
+
+.section-dark p,
+.section-dark li,
+.section-dark span,
+.section-dark .section-header p,
+.section-dark .proposal-list li {
+  color: #CBD5E1;
+  opacity: 1;
+}
+
+.section-dark .card p,
+.section-dark .card span,
+.section-dark .metric span,
+.section-dark .proof-pill span,
+.section-dark .dashboard-top {
+  color: #CBD5E1;
+  opacity: 1;
+}
+
+.section-dark .card h3,
+.section-dark .metric strong,
+.section-dark .proof-pill strong {
+  color: #F8FAFC;
+}
+
+.hero-panel,
+.metric,
+.proof-pill,
+.section-dark .card,
+.section-dark .timeline-item {
+  border-color: rgba(226, 232, 240, .20);
+}
+
+/* Chat também estava usando texto escuro em fundo escuro */
+.ai-msg.bot,
+.ai-chat-input,
+.ai-chat-header strong {
+  color: #F8FAFC;
+}
+
+.ai-chat-header span,
+.ai-chat-banner p {
+  color: #CBD5E1;
+}
+
+.ai-chat-input::placeholder {
+  color: #94A3B8;
+}
+
+/* ===== HOVER LEGÍVEL EM CARDS CLAROS ===== */
+
+.section-light .card:hover {
+  background: #FFFFFF;
+  border-color: #06B6D4;
+  box-shadow: 0 22px 50px rgba(15, 23, 42, .12);
+}
+
+.section-light .card:hover h3 {
+  color: #0F172A;
+}
+
+.section-light .card:hover p,
+.section-light .card:hover li,
+.section-light .card:hover span {
+  color: #475569;
+}
+
+.section-light .card:hover .btn-secondary {
+  background: #2563EB;
+  color: #FFFFFF;
+  border-color: #2563EB;
+}
+
+/* .proposal-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.proposal-list {
+  flex: 1;
+}
+
+.proposal-card .btn {
+  margin-top: 32px;
+  align-self: flex-start;
+} */
+
+#demo-site-institucional .proposal-list,
+#demo-landing-page .proposal-list,
+#demo-sistema-automacao .proposal-list {
+  margin-bottom: 16px;
+}
+
+#demo-site-institucional .proposal-list + .btn,
+#demo-landing-page .proposal-list + .btn,
+#demo-sistema-automacao .proposal-list + .btn {
+  margin-top: 0;
+}
+
+.ai-chat-tooltip {
+  position: fixed;
+  right: 95px;
+  bottom: 165px;
+  background: rgba(2, 6, 23, 0.95);
+  color: #F8FAFC;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.18);
+  font-size: 0.92rem;
+  font-weight: 500;
+  max-width: 240px;
+  line-height: 1.4;
+  z-index: 130;
+  backdrop-filter: blur(12px);
+  animation: floatTooltip 2.5s ease-in-out infinite;
+}
+
+/* setinha */
+.ai-chat-tooltip::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background: rgba(2, 6, 23, 0.95);
+  border-right: 1px solid rgba(6, 182, 212, 0.25);
+  border-top: 1px solid rgba(6, 182, 212, 0.25);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* animação leve */
+@keyframes floatTooltip {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .ai-chat-tooltip {
+    right: 80px;
+    bottom: 150px;
+    font-size: 0.85rem;
+    max-width: 200px;
+    padding: 10px 14px;
+  }
+}
+
+/* ===== OVER IA PREMIUM CTA ===== */
+
+.ai-chat-button {
+  animation: overPulse 2.4s ease-in-out infinite;
+}
+
+.ai-chat-button:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.35),
+    0 0 34px rgba(6,182,212,.55);
+}
+
+.ai-chat-tooltip {
+  position: fixed;
+  right: 104px;
+  bottom: 112px;
+  max-width: 260px;
+  padding: 13px 16px;
+  border-radius: 16px;
+  z-index: 131;
+  background: rgba(2, 6, 23, .94);
+  border: 1px solid rgba(6, 182, 212, .32);
+  color: #F8FAFC;
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.28),
+    0 0 26px rgba(6,182,212,.18);
+  backdrop-filter: blur(14px);
+  font-size: .9rem;
+  line-height: 1.35;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  animation: tooltipCycle 12s ease-in-out infinite;
+}
+
+.ai-chat-tooltip strong {
+  color: #06B6D4;
+}
+
+.ai-chat-tooltip::after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  bottom: 22px;
+  width: 14px;
+  height: 14px;
+  background: rgba(2, 6, 23, .94);
+  border-top: 1px solid rgba(6, 182, 212, .32);
+  border-right: 1px solid rgba(6, 182, 212, .32);
+  transform: rotate(45deg);
+}
+
+.ai-chat-tooltip.hidden {
+  display: none;
+}
+
+@keyframes overPulse {
+  0%, 100% {
+    box-shadow:
+      0 18px 50px rgba(0,0,0,.32),
+      0 0 0 0 rgba(6,182,212,.42);
+  }
+  50% {
+    box-shadow:
+      0 18px 50px rgba(0,0,0,.32),
+      0 0 0 12px rgba(6,182,212,0);
+  }
+}
+
+@keyframes tooltipCycle {
+  0%, 8% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  14%, 72% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80%, 100% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-chat-tooltip {
+    right: 92px;
+    bottom: 108px;
+    max-width: 210px;
+    font-size: .82rem;
+    padding: 11px 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .ai-chat-tooltip {
+    right: 86px;
+    bottom: 108px;
+    max-width: 190px;
+  }
+}
+
   </style>
 </head>
 
@@ -1401,7 +1690,7 @@
             <div class="over-showcase">
               <div class="over-badge">
                 <i class="fa-solid fa-robot"></i>
-                Over • Inteligência operacional
+                Over • Nossa IA pronta para te ajudar.
               </div>
               <div class="over-image">
                 <img src="Over_IA.gif" alt="OVER, a IA da Overclock Enterprise" />
@@ -1782,6 +2071,9 @@
     </section>
   </main>
 
+  <div class="ai-chat-tooltip">
+  Olá!
+</div>
   <button class="ai-chat-button" onclick="toggleAiChat()" aria-label="Abrir assistente virtual OVER">
     <img src="Over_IA.png" alt="Avatar da OVER" />
   </button>
@@ -1976,8 +2268,15 @@
     }
 
     function toggleAiChat() {
-      document.getElementById("aiChatWindow").classList.toggle("open");
-    }
+  const chat = document.getElementById("aiChatWindow");
+  const tooltip = document.getElementById("aiChatTooltip");
+
+  chat.classList.toggle("open");
+
+  if (chat.classList.contains("open") && tooltip) {
+    tooltip.classList.add("hidden");
+  }
+}
 
     function addAiMessage(text, sender) {
       const messages = document.getElementById("aiChatMessages");
@@ -2015,6 +2314,23 @@
         loading.textContent = "Erro ao conectar com a assistente. Tente novamente em instantes.";
       }
     }
+
+    window.addEventListener("load", () => {
+  const tooltip = document.getElementById("aiChatTooltip");
+  const chat = document.getElementById("aiChatWindow");
+
+  if (!tooltip || !chat) return;
+
+  setTimeout(() => {
+    if (!chat.classList.contains("open")) {
+      tooltip.style.animation = "tooltipCycle 12s ease-in-out infinite";
+    }
+  }, 1800);
+
+  setTimeout(() => {
+    tooltip.classList.add("hidden");
+  }, 18000);
+});
   </script>
 </body>
 </html>
