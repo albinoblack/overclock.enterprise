@@ -25,19 +25,22 @@
 
   <style>
     :root {
-      --bg: #0B1F3A;
-      --bg-deep: #061426;
-      --surface: #111827;
-      --surface-2: #0F172A;
-      --blue: #1E3A8A;
+      --bg: #0B1120;
+      --bg-deep: #020617;
+      --bg-light: #F8FAFC;
+      --surface: #FFFFFF;
+      --surface-2: #F8FAFC;
+      --blue: #2563EB;
       --cyan: #06B6D4;
       --cyan-soft: rgba(6, 182, 212, .16);
-      --text: #E5E7EB;
-      --muted: #94A3B8;
-      --border: rgba(229, 231, 235, .12);
+      --text: #0F172A;
+      --text-light: #E5E7EB;
+      --muted: #475569;
+      --border: #E2E8F0;
       --danger: #F97316;
       --success: #22C55E;
-      --shadow: 0 24px 80px rgba(0, 0, 0, .35);
+      --shadow: 0 24px 80px rgba(15, 23, 42, .08);
+      --shadow-soft: 0 16px 40px rgba(15, 23, 42, .08);
       --radius: 18px;
       --radius-sm: 12px;
       --container: 1180px;
@@ -58,10 +61,7 @@
       min-height: 100vh;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at 15% 10%, rgba(6, 182, 212, .18), transparent 30%),
-        radial-gradient(circle at 85% 15%, rgba(30, 58, 138, .32), transparent 32%),
-        linear-gradient(135deg, var(--bg-deep), var(--bg));
+      background: var(--bg-light);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -71,12 +71,81 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background-image:
-        linear-gradient(rgba(6, 182, 212, .045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(6, 182, 212, .045) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.15));
+      background-image: none;
       z-index: -1;
+    }
+
+    .section-light {
+      background: var(--bg-light);
+      color: var(--text);
+    }
+
+    .section-light h2,
+    .section-light h3 {
+      color: var(--text);
+    }
+
+    .section-light p,
+    .section-light li,
+    .section-light .proposal-list li,
+    .section-light .section-header p {
+      color: var(--muted);
+    }
+
+    .section-light .card,
+    .section-light .comparison-card,
+    .section-light .timeline-item,
+    .section-light .cta-panel {
+      background: var(--surface);
+      color: var(--text);
+      border-color: var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-dark {
+      background: linear-gradient(135deg, var(--bg-deep), var(--bg));
+      color: var(--text-light);
+    }
+
+    .section-dark h2,
+    .section-dark h3 {
+      color: var(--text-light);
+    }
+
+    .section-dark p,
+    .section-dark li,
+    .section-dark .proposal-list li,
+    .section-dark .section-header p {
+      color: rgba(229, 231, 235, .8);
+    }
+
+    .section-dark .card,
+    .section-dark .comparison-card,
+    .section-dark .timeline-item,
+    .section-dark .cta-panel {
+      background: rgba(255, 255, 255, .05);
+      border-color: rgba(226, 232, 240, .12);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .25);
+    }
+
+    .section-light .btn-secondary {
+      color: var(--text);
+      background: #EFF6FF;
+      border-color: #CBD5E1;
+    }
+
+    .section-light .btn-secondary:hover {
+      background: #E2E8F0;
+    }
+
+    .section-dark .btn-secondary {
+      background: rgba(255, 255, 255, .08);
+      border-color: rgba(255, 255, 255, .16);
+      color: var(--text-light);
+    }
+
+    .section-dark .btn-secondary:hover {
+      background: rgba(255, 255, 255, .12);
     }
 
     a {
@@ -97,6 +166,7 @@
     section {
       padding: 96px 0;
       position: relative;
+      scroll-margin-top: 110px;
     }
 
     .eyebrow {
@@ -171,21 +241,21 @@
 
     .btn-secondary {
       border-color: var(--border);
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.08);
       color: var(--text);
     }
 
     .btn-secondary:hover {
-      border-color: rgba(6, 182, 212, .55);
-      background: rgba(6, 182, 212, .09);
+      border-color: rgba(37, 99, 235, .4);
+      background: rgba(37, 99, 235, .08);
     }
 
     .header {
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid var(--border);
-      background: rgba(6, 20, 38, .78);
+      border-bottom: 1px solid rgba(226, 232, 240, .14);
+      background: rgba(2, 6, 23, .95);
       backdrop-filter: blur(18px);
     }
 
@@ -247,6 +317,7 @@
       padding: 86px 0 70px;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(135deg, #020617, #0B1120);
     }
 
     .hero-grid {
@@ -498,7 +569,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: rgba(17, 24, 39, .55);
-      box-shadow: 0 10px 40px rgba(0,0,0,.18);
+      box-shadow: 0 10px 40px rgba(0,0,0,.12);
       overflow: hidden;
       transition: transform var(--transition), border-color var(--transition), background var(--transition);
     }
@@ -1181,11 +1252,8 @@
     }
 
     .proposal-card.featured {
-      border-color: rgba(6, 182, 212, .58);
-      background:
-        radial-gradient(circle at 70% 0%, rgba(6, 182, 212, .20), transparent 30%),
-        rgba(17, 24, 39, .68);
-      transform: translateY(-8px);
+      border-color: rgba(37, 99, 235, .34);
+      background: rgba(37, 99, 235, .08);
     }
 
     .proposal-price {
@@ -1268,11 +1336,11 @@
       </a>
 
       <nav class="nav" id="mainNav">
-        <a href="#problema">Problema</a>
-        <a href="#solucoes">Soluções</a>
-        <a href="#portfolio">Aplicações</a>
         <a href="#propostas">Propostas</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#metodo">Como funciona</a>
         <a href="#contato">Contato</a>
+        <a href="#faq">FAQ</a>
       </nav>
 
       <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20proposta%20para%20organizar%20minha%20operação%20digital.">
@@ -1286,39 +1354,39 @@
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero section-dark">
       <div class="particle-bg"><canvas id="heroParticles"></canvas></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">OVER • DevOps • Automação • Infraestrutura</div>
-          <h1>Sua empresa está perdendo dinheiro com processos ruins.</h1>
+          <div class="eyebrow">OVER • Sites • Sistemas • Automação</div>
+          <h1>Sites, sistemas e automações para empresas que querem operar melhor</h1>
           <p>
-            Criamos sites, sistemas e automações para sua empresa vender melhor, trabalhar com menos retrabalho e operar com mais controle.
+            Criamos páginas profissionais, sistemas internos e automações para empresas que precisam vender melhor, reduzir retrabalho e organizar sua operação digital.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20avaliar%20minha%20estrutura%20tecnológica.">
+            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20proposta%20para%20minha%20empresa.">
               <i class="fa-brands fa-whatsapp"></i>
-              Quero organizar minha empresa
+              Quero uma proposta
             </a>
-            <a class="btn btn-secondary" href="#solucoes">
-              Ver soluções
+            <a class="btn btn-secondary" href="#propostas">
+              Ver propostas
               <i class="fa-solid fa-arrow-down"></i>
             </a>
           </div>
 
           <div class="hero-proof">
             <div class="proof-pill">
-              <strong>Menos retrabalho</strong>
-              <span>processos mais simples</span>
+              <strong>Site institucional</strong>
+              <span>confiança e contato</span>
             </div>
             <div class="proof-pill">
-              <strong>Mais controle</strong>
-              <span>informação no lugar certo</span>
+              <strong>Landing page</strong>
+              <span>conversão e leads</span>
             </div>
             <div class="proof-pill">
-              <strong>Mais vendas</strong>
-              <span>presença digital melhor</span>
+              <strong>Sistema</strong>
+              <span>menos retrabalho</span>
             </div>
           </div>
         </div>
@@ -1384,97 +1452,78 @@
       </div>
     </section>
 
-    <section id="problema">
-      <div class="particle-bg"><canvas id="problemParticles"></canvas></div>
+    <section id="propostas" class="section-light">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">Diagnóstico real</div>
-          <h2>O problema não é falta de esforço. É excesso de improviso.</h2>
-          <p>
-            Quando tudo depende de planilha, WhatsApp e tarefas manuais, sua empresa perde tempo, dinheiro e oportunidades.
-          </p>
+          <div class="eyebrow">Propostas</div>
+          <h2>Escolha por onde sua empresa precisa começar</h2>
+          <p>Três ofertas claras para vender melhor, organizar a operação e reduzir trabalho manual.</p>
         </div>
 
-        <div class="cards-grid">
-          <article class="card reveal">
-            <div class="icon"><i class="fa-solid fa-file-excel"></i></div>
-            <h3>Processos manuais</h3>
-            <p>Sua equipe perde tempo repetindo tarefas que poderiam ser automatizadas.</p>
-          </article>
-          <article class="card reveal">
-            <div class="icon"><i class="fa-solid fa-link-slash"></i></div>
-            <h3>Informação espalhada</h3>
-            <p>Dados ficam perdidos em planilhas, conversas e ferramentas desconectadas.</p>
-          </article>
-          <article class="card reveal">
-            <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h3>Crescimento vira caos</h3>
-            <p>Vender mais começa a gerar mais erro, atraso e retrabalho.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="solucoes">
-      <div class="container">
-        <div class="section-header reveal">
-          <div class="eyebrow">Soluções</div>
-          <h2>Soluções simples para problemas reais.</h2>
-          <p>
-            Escolha por onde começar: site profissional, landing page de venda, sistema interno ou automação de processos.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <article class="card reveal">
-            <div class="icon"><i class="fa-solid fa-code"></i></div>
-            <h3>Sistema interno</h3>
-            <p>Controle clientes, pedidos, prazos, tarefas e informações em um só lugar.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="icon"><i class="fa-solid fa-robot"></i></div>
-            <h3>Automação</h3>
-            <p>Reduza tarefas manuais, retrabalho e falhas operacionais.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="icon"><i class="fa-solid fa-server"></i></div>
-            <h3>Estrutura digital</h3>
-            <p>Organize ferramentas, acessos, arquivos e rotinas da empresa.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="icon"><i class="fa-solid fa-chart-simple"></i></div>
-            <h3>Landing page</h3>
-            <p>Uma página clara para vender serviços e transformar visitas em contatos.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
-            <h3>Site profissional</h3>
-            <p>Apresente sua empresa com autoridade e facilite o contato pelo WhatsApp.</p>
-          </article>
-
-          <article class="card reveal">
+        <div class="proposal-grid">
+          <article class="card proposal-card reveal">
             <div class="icon"><i class="fa-solid fa-globe"></i></div>
-            <h3>Suporte e evolução</h3>
-            <p>Ajustes, melhorias e acompanhamento para sua estrutura continuar funcionando.</p>
+            <h3>Site institucional</h3>
+            <p>Para empresas que precisam transmitir confiança, apresentar serviços, facilitar contato e ter presença digital profissional.</p>
+            <ul class="proposal-list">
+              <li><i class="fa-solid fa-check"></i><span>Página inicial</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Sobre a empresa</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Serviços</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Contato pelo WhatsApp</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Responsivo para celular</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Estrutura pronta para evoluir</span></li>
+            </ul>
+            <a class="btn btn-secondary" href="#demo-site-institucional">Saber mais</a>
+          </article>
+
+          <article class="card proposal-card featured reveal">
+            <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Landing page</h3>
+            <p>Para empresas que querem vender um serviço específico, captar contatos e direcionar visitantes para o WhatsApp.</p>
+            <ul class="proposal-list">
+              <li><i class="fa-solid fa-check"></i><span>Página única de alta clareza</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Copy orientada à conversão</span></li>
+              <li><i class="fa-solid fa-check"></i><span>CTA para WhatsApp</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Estrutura para campanhas</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Design responsivo</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Foco em geração de leads</span></li>
+            </ul>
+            <a class="btn btn-secondary" href="#demo-landing-page">Saber mais</a>
+          </article>
+
+          <article class="card proposal-card reveal">
+            <div class="icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>Sistema e automação</h3>
+            <p>Para empresas que dependem de planilhas, tarefas manuais e processos desorganizados.</p>
+            <ul class="proposal-list">
+              <li><i class="fa-solid fa-check"></i><span>Sistema interno</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Controle de clientes, pedidos ou tarefas</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Automações operacionais</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Integração entre ferramentas</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Dashboard ou painel de controle</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Suporte e evolução</span></li>
+            </ul>
+            <a class="btn btn-secondary" href="#demo-sistema-automacao">Saber mais</a>
           </article>
         </div>
       </div>
     </section>
 
-
-    <section id="portfolio">
+    <section id="aplicacoes" class="section-dark">
       <div class="container">
         <div class="section-header reveal">
           <div class="eyebrow">Aplicações práticas</div>
-          <h2>Onde isso se aplica</h2>
-          <p>A Overclock atende diferentes negócios sem complicar a oferta. O foco é resolver o problema certo.</p>
+          <h2>Exemplos claros do que sua empresa pode contratar</h2>
+          <p>Escolha a opção que faz mais sentido para seu momento e veja como ela funciona na prática.</p>
         </div>
 
-        <div class="portfolio-showcase">
+        <div class="hero-actions" style="justify-content:center; gap: 14px; margin-top: 24px;">
+          <a class="btn btn-secondary" href="#demo-site-institucional">Site institucional</a>
+          <a class="btn btn-secondary" href="#demo-landing-page">Landing page</a>
+          <a class="btn btn-secondary" href="#demo-sistema-automacao">Sistema e automação</a>
+        </div>
+
+        <div class="portfolio-showcase" style="margin-top: 32px;">
           <article class="card portfolio-card reveal">
             <div class="portfolio-preview"></div>
             <span class="portfolio-badge">Advogados</span>
@@ -1506,98 +1555,134 @@
       </div>
     </section>
 
-    <section id="propostas">
+    <section id="demo-site-institucional" class="section-light">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">Por onde começar</div>
-          <h2>Três caminhos simples</h2>
-          <p>Você não precisa resolver tudo de uma vez. Comece pelo que gera mais impacto agora.</p>
+          <div class="eyebrow">Demonstração</div>
+          <h2>Site institucional para gerar confiança</h2>
+          <p>Indicado para empresas que precisam explicar quem são, apresentar serviços, mostrar autoridade e facilitar contato com clientes.</p>
         </div>
 
-        <div class="proposal-grid">
-          <article class="card proposal-card reveal">
-            <div class="icon"><i class="fa-solid fa-globe"></i></div>
-            <h3>Site profissional</h3>
-            <p class="proposal-note">Para transmitir confiança e receber contatos.</p>
-          </article>
-
-          <article class="card proposal-card featured reveal">
-            <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
-            <h3>Landing page de venda</h3>
-            <p class="proposal-note">Para vender um serviço específico e levar o cliente ao WhatsApp.</p>
-          </article>
-
-          <article class="card proposal-card reveal">
-            <div class="icon"><i class="fa-solid fa-robot"></i></div>
-            <h3>Sistema ou automação</h3>
-            <p class="proposal-note">Para reduzir retrabalho e organizar processos internos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="diferenciais">
-      <div class="container split">
-        <div class="reveal">
-          <div class="eyebrow">Diferencial</div>
-          <h2>Por que a Overclock?</h2>
-          <p style="color: var(--muted); margin-top: 16px;">
-            Menos promessa, mais entrega prática. A ideia é sair da conversa e colocar algo funcionando.
-          </p>
-
-          <ul class="list">
-            <li><i class="fa-solid fa-check"></i><span>Diagnóstico direto do problema.</span></li>
-            <li><i class="fa-solid fa-check"></i><span>Implementação prática.</span></li>
-            <li><i class="fa-solid fa-check"></i><span>Suporte para evoluir depois.</span></li>
-          </ul>
-        </div>
-
-        <div class="comparison reveal">
-          <div class="comparison-card bad">
-            <h3>O comum</h3>
-            <ul>
-              <li><span style="color: #ef4444; font-weight: bold;">✗</span><span> Muita teoria</span></li>
-              <li><span style="color: #ef4444; font-weight: bold;">✗</span><span> Ferramentas soltas</span></li>
-              <li><span style="color: #ef4444; font-weight: bold;">✗</span><span> Pouca execução</span></li>
-              <li><span style="color: #ef4444; font-weight: bold;">✗</span><span> Demora para colocar no ar</span></li>
+        <div class="split">
+          <div class="reveal">
+            <ul class="proposal-list">
+              <li><i class="fa-solid fa-check"></i><span>Página inicial</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Sobre a empresa</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Serviços</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Contato pelo WhatsApp</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Responsivo para celular</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Estrutura pronta para evoluir</span></li>
             </ul>
+            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20um%20site%20institucional%20para%20minha%20empresa.">Quero um site institucional</a>
           </div>
 
-          <div class="comparison-card good">
-            <h3>A Overclock</h3>
-            <ul>
-              <li><span style="color: #22c55e; font-weight: bold;">✓</span><span> Entrega funcionando</span></li>
-              <li><span style="color: #22c55e; font-weight: bold;">✓</span><span> Site, sistema ou automação no ar</span></li>
-              <li><span style="color: #22c55e; font-weight: bold;">✓</span><span> Foco no uso real</span></li>
-              <li><span style="color: #22c55e; font-weight: bold;">✓</span><span> Suporte e evolução</span></li>
-            </ul>
+          <div class="card reveal" style="padding: 36px;">
+            <h3>Mockup visual</h3>
+            <p>Layout claro com serviços, provas, credibilidade e CTA para WhatsApp.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="metodo">
+    <section id="demo-landing-page" class="section-light">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Demonstração</div>
+          <h2>Landing page para transformar visitantes em contatos</h2>
+          <p>Indicado para campanhas, serviços específicos, lançamentos, captação de leads e direcionamento para WhatsApp.</p>
+        </div>
+
+        <div class="split">
+          <div class="reveal">
+            <ul class="proposal-list">
+              <li><i class="fa-solid fa-check"></i><span>Página única de alta clareza</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Copy orientada à conversão</span></li>
+              <li><i class="fa-solid fa-check"></i><span>CTA para WhatsApp</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Estrutura para campanhas</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Design responsivo</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Foco em geração de leads</span></li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20landing%20page%20para%20minha%20empresa.">Quero uma landing page</a>
+          </div>
+
+          <div class="card reveal" style="padding: 36px;">
+            <h3>Mockup visual</h3>
+            <p>Headline clara, benefícios, prova e WhatsApp integrado em destaque.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo-sistema-automacao" class="section-dark">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Demonstração</div>
+          <h2>Sistema e automação para reduzir retrabalho</h2>
+          <p>Indicado para empresas que usam planilhas, WhatsApp e controles manuais para tarefas que poderiam ser organizadas em sistema.</p>
+        </div>
+
+        <div class="split">
+          <div class="reveal">
+            <ul class="proposal-list">
+              <li><i class="fa-solid fa-check"></i><span>Clientes</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Pedidos</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Tarefas</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Status</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Alertas</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Relatórios</span></li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20organizar%20minha%20operação%20com%20um%20sistema.">Quero organizar minha operação</a>
+          </div>
+
+          <div class="card reveal" style="padding: 36px;">
+            <h3>Mockup visual</h3>
+            <p>Dashboard com clientes, pedidos, tarefas, status e relatórios em destaque.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="confianca" class="section-light">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Prova</div>
+          <h2>Por que contratar a Overclock?</h2>
+          <p>A escolha certa é a solução que entrega resultado, não apenas análise.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card reveal"><div class="icon"><i class="fa-solid fa-play"></i></div><h3>Entrega prática</h3><p>Não apenas orientação: entregamos algo funcionando.</p></article>
+          <article class="card reveal"><div class="icon"><i class="fa-solid fa-chart-line"></i></div><h3>Visual profissional</h3><p>Design pensado para conversão e credibilidade.</p></article>
+          <article class="card reveal"><div class="icon"><i class="fa-solid fa-cogs"></i></div><h3>Tecnologia real</h3><p>Soluções que funcionam na prática, não apenas no papel.</p></article>
+          <article class="card reveal"><div class="icon"><i class="fa-solid fa-network-wired"></i></div><h3>Integração</h3><p>Site, sistema e automação conectados onde faz sentido.</p></article>
+          <article class="card reveal"><div class="icon"><i class="fa-solid fa-headset"></i></div><h3>Suporte</h3><p>Correções e evolução conforme sua empresa cresce.</p></article>
+          <article class="card reveal"><div class="icon"><i class="fa-solid fa-handshake-simple"></i></div><h3>Atendimento direto</h3><p>Comunicação objetiva e foco em resultado.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="section-dark">
       <div class="container">
         <div class="section-header reveal">
           <div class="eyebrow">Método</div>
           <h2>Como funciona</h2>
-          <p>Um processo simples: entender, implementar e evoluir.</p>
+          <p>Um processo simples: entendemos, criamos e evoluímos.</p>
         </div>
 
         <div class="timeline">
           <div class="timeline-item reveal">
             <div class="timeline-number">1</div>
             <div>
-              <h3>Entendemos o problema</h3>
-              <p>Mapeamos onde sua empresa perde tempo, dinheiro ou controle.</p>
+              <h3>Entendemos sua necessidade</h3>
+              <p>Mapeamos o ponto certo para atacar primeiro.</p>
             </div>
           </div>
 
           <div class="timeline-item reveal">
             <div class="timeline-number">2</div>
             <div>
-              <h3>Colocamos a solução no ar</h3>
-              <p>Criamos o site, sistema, automação ou ajuste técnico necessário.</p>
+              <h3>Criamos e colocamos no ar</h3>
+              <p>Desenvolvemos a entrega com foco em uso real.</p>
             </div>
           </div>
 
@@ -1605,37 +1690,37 @@
             <div class="timeline-number">3</div>
             <div>
               <h3>Ajustamos e evoluímos</h3>
-              <p>Acompanhamos melhorias conforme a empresa cresce.</p>
+              <p>Fazemos ajustes rápidos e mantemos o projeto preparado para crescer.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contato">
+    <section id="contato" class="section-dark">
       <div class="container">
         <div class="cta-panel reveal">
           <div class="eyebrow" style="justify-content:center;">Próximo passo</div>
           <h2>Quer saber qual solução faz mais sentido para sua empresa?</h2>
           <p>
-            Me chame no WhatsApp, explique rapidamente seu cenário e eu te digo o caminho mais simples para começar.
+            Chame no WhatsApp ou fale com a OVER IA para explicar seu cenário. Indicamos o caminho mais simples para começar.
           </p>
 
           <div class="cta-actions">
-            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20solicitar%20um%20diagnóstico%20técnico%20da%20minha%20empresa.">
+            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20proposta%20para%20minha%20empresa.">
               <i class="fa-brands fa-whatsapp"></i>
               Quero uma proposta
             </a>
-            <a class="btn btn-secondary" href="mailto:overclockboost@gmail.com?subject=Quero uma proposta - Overclock Enterprise">
-              <i class="fa-solid fa-envelope"></i>
-              Prefiro e-mail
-            </a>
+            <button class="btn btn-secondary" type="button" onclick="toggleAiChat()">
+              <i class="fa-solid fa-robot"></i>
+              Falar com a OVER IA
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="faq">
+    <section id="faq" class="section-light">
       <div class="container">
         <div class="section-header reveal">
           <div class="eyebrow">FAQ</div>
@@ -1649,27 +1734,47 @@
               <i class="fa-solid fa-chevron-down"></i>
             </button>
             <div class="faq-answer">
-              <p>Não. Sites são uma frente. O foco principal é estruturar operação digital com sistemas, automação, infraestrutura, DevOps, observabilidade e suporte técnico.</p>
+              <p>Não. Criamos sites, landing pages, sistemas e automações que fazem sua empresa operar melhor.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">
-              Vocês atendem empresas pequenas?
+              Qual a diferença entre site institucional e landing page?
               <i class="fa-solid fa-chevron-down"></i>
             </button>
             <div class="faq-answer">
-              <p>Sim, desde que exista dor operacional clara: planilhas demais, retrabalho, falta de controle, ferramenta desconectada ou dependência excessiva de processos manuais.</p>
+              <p>Site institucional apresenta a empresa e seus serviços. Landing page tem foco em conversão e contato rápido.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">
-              Vocês oferecem manutenção mensal?
+              Vocês fazem sistemas sob medida?
               <i class="fa-solid fa-chevron-down"></i>
             </button>
             <div class="faq-answer">
-              <p>Sim. Podemos atuar com suporte recorrente, monitoramento, melhorias, correções, evolução de sistemas e manutenção da infraestrutura.</p>
+              <p>Sim. Criamos sistemas internos e automações para processos que hoje estão em planilhas ou WhatsApp.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Posso começar pequeno e evoluir depois?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Sim. Planejamos desde o início para a solução ser escalável e evoluir conforme sua empresa cresce.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Vocês oferecem manutenção?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Sim. Oferecemos suporte, ajustes e evolução para que sua solução continue funcionando.</p>
             </div>
           </div>
         </div>
@@ -1748,9 +1853,9 @@
 
       <div>
         <h3>Navegação</h3>
-        <a href="#solucoes">Soluções</a>
-        <a href="#portfolio">Aplicações</a>
         <a href="#propostas">Propostas</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#metodo">Como funciona</a>
         <a href="#contato">Contato</a>
       </div>
 
