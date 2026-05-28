@@ -9,9 +9,7 @@ const ALLOWED_ORIGINS = [
   process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null,
 
   // Ajuste para os domínios reais da Overclock.
-  "https://www.overclock.com.br",
-  "https://overclock.com.br",
-  "https://oktoppus.vercel.app",
+  "https://www.overclock-enterprise.vercel.app"
 ].filter(Boolean);
 
 const rateLimitStore = new Map();
