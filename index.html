@@ -4,19 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Overclock Enterprise | Sua empresa funcionando do jeito certo</title>
-  <meta name="description" content="Soluções para empresas que querem parar de perder dinheiro com processos falhos e crescer de verdade." />
-  <meta name="keywords" content="DevOps, infraestrutura, automação, sistemas web, observabilidade, alta disponibilidade, CI/CD, cloud, suporte técnico, Overclock Enterprise" />
-  <meta name="theme-color" content="#0B1F3A" />
+  <title>Overclock Enterprise | Sites, sistemas e automações</title>
+  <meta name="description" content="Sites profissionais, sistemas internos e automações para empresas venderem melhor, reduzirem retrabalho e operarem com mais controle." />
+  <meta name="keywords" content="sites profissionais, landing pages, sistemas web, automação empresarial, integração de sistemas, Overclock Enterprise" />
+  <meta name="theme-color" content="#0B1120" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
-  <meta property="og:title" content="Overclock Enterprise | Infraestrutura que não falha" />
-  <meta property="og:description" content="Projetamos soluções que fazem sua empresa parar de perder dinheiro e começar a crescer de verdade." />
-  <meta property="og:url" content="https://overclock-enterprise.vercel.app/" />
+  <link rel="canonical" href="https://www.overclock-enterprise.com.br/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:title" content="Overclock Enterprise | Sites, sistemas e automações" />
+  <meta property="og:description" content="Tecnologia que vende. Sistemas que organizam. Soluções digitais para empresas operarem com menos retrabalho." />
+  <meta property="og:url" content="https://www.overclock-enterprise.com.br/" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Overclock Enterprise" />
+  <meta property="og:image" content="https://www.overclock-enterprise.com.br/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Overclock Enterprise — tecnologia que vende e sistemas que organizam" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Overclock Enterprise | Infraestrutura que não falha" />
-  <meta name="twitter:description" content="Soluções para empresas que querem operar com eficiência e crescer sem perder dinheiro." />
+  <meta name="twitter:title" content="Overclock Enterprise | Sites, sistemas e automações" />
+  <meta name="twitter:description" content="Tecnologia que vende. Sistemas que organizam." />
+  <meta name="twitter:image" content="https://www.overclock-enterprise.com.br/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Overclock Enterprise",
+    "alternateName": "OVR",
+    "url": "https://www.overclock-enterprise.com.br/",
+    "logo": "https://www.overclock-enterprise.com.br/logo-ovr-color.svg",
+    "email": "overclockboost@gmail.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-12-99757-0377",
+      "contactType": "sales",
+      "availableLanguage": "Portuguese"
+    },
+    "knowsAbout": [
+      "Sites institucionais",
+      "Landing pages",
+      "Sistemas web",
+      "Automação empresarial",
+      "Integração de sistemas"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -461,6 +499,13 @@
     }
 
     .over-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .over-image video {
       width: 100%;
       height: auto;
       display: block;
@@ -1675,37 +1720,323 @@
   }
 }
 
+/* ===== IDENTIDADE OVR E PORTFÓLIO ===== */
+.header-inner {
+  min-height: 72px;
+}
+
+.brand-logo {
+  display: block;
+  width: clamp(172px, 18vw, 222px);
+  height: auto;
+}
+
+.footer .brand-logo {
+  width: min(228px, 100%);
+}
+
+.footer h3 {
+  color: #F8FAFC;
+}
+
+.footer p,
+.footer a {
+  color: #94A3B8;
+}
+
+.hero {
+  min-height: auto;
+  padding: clamp(76px, 9vw, 118px) 0 clamp(70px, 8vw, 104px);
+}
+
+.hero-grid {
+  grid-template-columns: 1.12fr .88fr;
+  gap: clamp(38px, 5vw, 68px);
+}
+
+.hero h1 {
+  max-width: 780px;
+  font-size: clamp(2.7rem, 5.5vw, 5.15rem);
+}
+
+.hero-panel {
+  max-width: 510px;
+  justify-self: end;
+  padding: 20px;
+}
+
+.over-image {
+  max-height: 320px;
+}
+
+.over-image img,
+.over-image video {
+  aspect-ratio: 16 / 10;
+  object-position: center;
+}
+
+.particle-bg {
+  opacity: .68;
+}
+
+.btn-outline {
+  border-color: #CBD5E1;
+  background: transparent;
+  color: #0F172A;
+}
+
+.btn-outline:hover {
+  border-color: var(--blue);
+  background: rgba(37, 99, 235, .07);
+}
+
+.portfolio-case {
+  grid-template-columns: .78fr 1.22fr;
+  gap: clamp(34px, 5vw, 64px);
+}
+
+.live-badge,
+.concept-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.live-badge {
+  margin-bottom: 20px;
+  color: #166534;
+  background: #DCFCE7;
+  border: 1px solid #BBF7D0;
+}
+
+.live-badge i {
+  font-size: .48rem;
+  color: #22C55E;
+}
+
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.project-browser {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #D7E0EA;
+  border-radius: 22px;
+  color: #0F172A;
+  background: #FFFFFF;
+  box-shadow: 0 28px 75px rgba(15, 23, 42, .14);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.project-browser:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 34px 90px rgba(15, 23, 42, .18);
+}
+
+.project-browser-bar {
+  min-height: 46px;
+  display: grid;
+  grid-template-columns: 68px 1fr 68px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border-bottom: 1px solid #E2E8F0;
+  background: #F1F5F9;
+}
+
+.project-browser-bar small {
+  overflow: hidden;
+  color: #64748B;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.project-browser-dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #CBD5E1;
+}
+
+.project-browser-dots i:first-child { background: #FB7185; }
+.project-browser-dots i:nth-child(2) { background: #FBBF24; }
+.project-browser-dots i:last-child { background: #4ADE80; }
+
+.project-viewport {
+  height: 430px;
+  overflow: hidden;
+  background: #081019;
+}
+
+.project-viewport img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: portfolioScroll 24s ease-in-out infinite;
+  will-change: transform;
+}
+
+.project-browser:hover .project-viewport img,
+.project-browser:focus-visible .project-viewport img {
+  animation-play-state: paused;
+}
+
+.project-browser-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 15px 18px;
+  font-size: .82rem;
+}
+
+.project-browser-footer span { color: #64748B; }
+.project-browser-footer strong { color: var(--blue); }
+
+@keyframes portfolioScroll {
+  0%, 10% { transform: translateY(0); }
+  46%, 54% { transform: translateY(calc(-50% + 215px)); }
+  90%, 100% { transform: translateY(calc(-100% + 430px)); }
+}
+
+.demo-visual {
+  padding: 18px;
+}
+
+.compact-showcase {
+  margin-top: 34px;
+}
+
+.compact-showcase .portfolio-card {
+  padding-top: 26px;
+}
+
+.compact-showcase .portfolio-badge {
+  position: static;
+  display: inline-flex;
+  margin-bottom: 16px;
+}
+
+.demo-visual img {
+  display: block;
+  width: 100%;
+  margin: 14px 0 16px;
+  border: 1px solid rgba(148, 163, 184, .24);
+  border-radius: 13px;
+}
+
+.concept-badge {
+  color: #0E7490;
+  background: #CFFAFE;
+  border: 1px solid #A5F3FC;
+}
+
+.section-dark .concept-badge {
+  color: #0E7490;
+}
+
+.section-dark .portfolio-badge {
+  color: #22D3EE;
+}
+
+@media (max-width: 980px) {
+  .hero-panel {
+    max-width: 680px;
+    justify-self: stretch;
+  }
+
+  .portfolio-case {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    width: 174px;
+  }
+
+  .hero {
+    padding-top: 62px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.45rem, 13vw, 3.7rem);
+  }
+
+  .case-actions {
+    flex-direction: column;
+  }
+
+  .project-browser-bar {
+    grid-template-columns: 54px 1fr 54px;
+    padding: 0 12px;
+  }
+
+  .project-viewport {
+    height: 350px;
+  }
+
+  .project-browser-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  @keyframes portfolioScroll {
+    0%, 10% { transform: translateY(0); }
+    46%, 54% { transform: translateY(calc(-50% + 175px)); }
+    90%, 100% { transform: translateY(calc(-100% + 350px)); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .project-viewport img,
+  .ai-chat-button,
+  .ai-chat-tooltip,
+  .typing-dots span { animation: none !important; }
+}
+
   </style>
 </head>
 
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Overclock Enterprise">
-        <svg class="brand-mark" viewBox="0 0 160 160" aria-hidden="true">
-          <circle cx="80" cy="82" r="21" fill="#06B6D4"/>
-          <circle cx="42" cy="122" r="10" fill="#E5E7EB"/>
-          <circle cx="118" cy="122" r="10" fill="#E5E7EB"/>
-          <circle cx="80" cy="30" r="10" fill="#E5E7EB"/>
-          <path d="M80 82L42 122M80 82L118 122M80 82V30" stroke="#E5E7EB" stroke-width="5" stroke-linecap="round"/>
-          <path d="M30 92A54 54 0 0 1 130 92" stroke="#06B6D4" stroke-width="9" fill="none" stroke-linecap="round"/>
-        </svg>
-        OVERCLOCK <span>Enterprise</span>
+      <a class="brand" href="#top" aria-label="Overclock Enterprise — início">
+        <img class="brand-logo" src="logo-ovr-reverse.svg" alt="Overclock Enterprise" />
       </a>
 
-      <nav class="nav" id="mainNav">
-        <a href="#propostas">Propostas</a>
-        <a href="#aplicacoes">Aplicações</a>
+      <nav class="nav" id="mainNav" aria-label="Navegação principal">
+        <a href="#propostas">Soluções</a>
+        <a href="#demo-site-institucional">Portfólio</a>
         <a href="#metodo">Como funciona</a>
         <a href="#contato">Contato</a>
         <a href="#faq">FAQ</a>
       </nav>
 
-      <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20proposta%20para%20organizar%20minha%20operação%20digital.">
+      <a class="btn btn-primary" data-track="whatsapp_header" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20proposta%20para%20organizar%20minha%20operação%20digital.">
         Quero uma proposta
       </a>
 
-      <button class="mobile-menu-button" type="button" onclick="toggleMenu()" aria-label="Abrir menu">
+      <button class="mobile-menu-button" id="mobileMenuButton" type="button" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
@@ -1716,19 +2047,19 @@
       <div class="particle-bg"><canvas id="heroParticles"></canvas></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">OVER • Sites • Sistemas • Automação</div>
-          <h1>Sites, sistemas e automações para empresas que querem operar melhor</h1>
+          <div class="eyebrow">OVR • OVERCLOCK ENTERPRISE</div>
+          <h1>Tecnologia que vende. <strong>Sistemas que organizam.</strong></h1>
           <p>
-            Criamos páginas profissionais, sistemas internos e automações para empresas que precisam vender melhor, reduzir retrabalho e organizar sua operação digital.
+            Criamos sites profissionais, sistemas internos e automações para empresas venderem melhor, reduzirem retrabalho e operarem com mais controle.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20proposta%20para%20minha%20empresa.">
+            <a class="btn btn-primary" data-track="whatsapp_hero" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20proposta%20para%20minha%20empresa.">
               <i class="fa-brands fa-whatsapp"></i>
               Quero uma proposta
             </a>
             <a class="btn btn-secondary" href="#propostas">
-              Ver propostas
+              Ver soluções
               <i class="fa-solid fa-arrow-down"></i>
             </a>
           </div>
@@ -1743,8 +2074,8 @@
               <span>conversão e leads</span>
             </div>
             <div class="proof-pill">
-              <strong>Sistema</strong>
-              <span>menos retrabalho</span>
+              <strong>Sistema e automação</strong>
+              <span>controle e eficiência</span>
             </div>
           </div>
         </div>
@@ -1752,17 +2083,19 @@
         <div class="hero-panel reveal">
           <div class="dashboard">
             <div class="dashboard-top">
-              <span><i class="fa-solid fa-chart-line"></i> Painel operacional</span>
+              <span><i class="fa-solid fa-wand-magic-sparkles"></i> Diagnóstico inicial</span>
               <span class="status">Online</span>
             </div>
 
             <div class="over-showcase">
               <div class="over-badge">
                 <i class="fa-solid fa-robot"></i>
-                Over • Nossa IA pronta para te ajudar.
+                OVER • Assistente digital da Overclock
               </div>
               <div class="over-image">
-                <img src="Over_IA.gif" alt="OVER, a IA da Overclock Enterprise" />
+                <video autoplay muted loop playsinline preload="metadata" poster="over-assistant-poster.jpg" aria-label="OVER, a assistente digital da Overclock Enterprise">
+                  <source src="over-assistant.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
 
@@ -1870,41 +2203,31 @@
     <section id="aplicacoes" class="section-dark">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">Aplicações práticas</div>
-          <h2>Exemplos claros do que sua empresa pode contratar</h2>
-          <p>Escolha a opção que faz mais sentido para seu momento e veja como ela funciona na prática.</p>
+          <div class="eyebrow">Aplicações</div>
+          <h2>Tecnologia para diferentes operações</h2>
+          <p>A solução muda conforme o negócio. O foco permanece: vender melhor, organizar processos e reduzir tarefas manuais.</p>
         </div>
 
-        <div class="hero-actions" style="justify-content:center; gap: 14px; margin-top: 24px;">
-          <a class="btn btn-secondary" href="#demo-site-institucional">Site institucional</a>
-          <a class="btn btn-secondary" href="#demo-landing-page">Landing page</a>
-          <a class="btn btn-secondary" href="#demo-sistema-automacao">Sistema e automação</a>
-        </div>
-
-        <div class="portfolio-showcase" style="margin-top: 32px;">
+        <div class="portfolio-showcase compact-showcase">
           <article class="card portfolio-card reveal">
-            <div class="portfolio-preview"></div>
             <span class="portfolio-badge">Advogados</span>
             <h3>Site e atendimento</h3>
             <p>Mais autoridade, contato facilitado e melhor organização de clientes e prazos.</p>
           </article>
 
           <article class="card portfolio-card reveal">
-            <div class="portfolio-preview"></div>
             <span class="portfolio-badge">Clínicas</span>
             <h3>Agenda e captação</h3>
             <p>Organize agendamentos, retornos e entrada de novos pacientes.</p>
           </article>
 
           <article class="card portfolio-card reveal">
-            <div class="portfolio-preview"></div>
             <span class="portfolio-badge">Empresas locais</span>
             <h3>Presença digital</h3>
             <p>Site profissional, WhatsApp, pedidos e rotinas internas mais claras.</p>
           </article>
 
           <article class="card portfolio-card reveal">
-            <div class="portfolio-preview"></div>
             <span class="portfolio-badge">SaaS e digital</span>
             <h3>Landing e automação</h3>
             <p>Captação de leads, vendas e operação com mais previsibilidade.</p>
@@ -1916,33 +2239,47 @@
     <section id="demo-site-institucional" class="section-light">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">Demonstração</div>
-          <h2>Site institucional para gerar confiança</h2>
-          <p>Indicado para empresas que precisam explicar quem são, apresentar serviços, mostrar autoridade e facilitar contato com clientes.</p>
+          <div class="eyebrow">Projeto real • Portfólio</div>
+          <h2>Victor Melo Advogados: presença digital orientada à conversão</h2>
+          <p>Um site institucional completo para transformar autoridade jurídica em uma experiência clara, profissional e simples de contatar.</p>
         </div>
 
-        <div class="split">
-          <div class="reveal">
+        <div class="split portfolio-case">
+          <div class="case-copy reveal">
+            <span class="live-badge"><i class="fa-solid fa-circle"></i> Projeto publicado</span>
             <ul class="proposal-list">
-              <li><i class="fa-solid fa-check"></i><span>Página inicial</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Sobre a empresa</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Serviços</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Contato pelo WhatsApp</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Responsivo para celular</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Estrutura pronta para evoluir</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Posicionamento e apresentação dos serviços</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Design responsivo para celular e desktop</span></li>
+              <li><i class="fa-solid fa-check"></i><span>WhatsApp e formulário de contato integrados</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Estrutura de autoridade e confiança</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Navegação objetiva e foco em conversão</span></li>
             </ul>
-            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20um%20site%20institucional%20para%20minha%20empresa.">Quero um site institucional</a>
+            <div class="case-actions">
+              <a class="btn btn-primary" data-track="portfolio_victor_melo" href="https://victor-melo-advogados.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Ver projeto completo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a class="btn btn-outline" data-track="whatsapp_portfolio" href="https://wa.me/5512997570377?text=Olá,%20vi%20o%20projeto%20Victor%20Melo%20e%20quero%20um%20site%20profissional%20para%20minha%20empresa.">Quero um site assim</a>
+            </div>
           </div>
 
-          <div class="card reveal" style="padding: 36px;">
-            <h3>Mockup visual</h3>
-            <p>Layout claro com serviços, provas, credibilidade e CTA para WhatsApp.</p>
-          </div>
+          <a class="project-browser reveal" data-track="portfolio_preview" href="https://victor-melo-advogados.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir o projeto Victor Melo Advogados em uma nova aba">
+            <div class="project-browser-bar">
+              <span class="project-browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <small>victor-melo-advogados.vercel.app</small>
+            </div>
+            <div class="project-viewport">
+              <img src="victor-melo-fullpage.webp" alt="Página completa do site Victor Melo Advogados, desenvolvido pela Overclock" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-browser-footer">
+              <span>Projeto desenvolvido pela Overclock</span>
+              <strong>Visitar site <i class="fa-solid fa-arrow-up-right-from-square"></i></strong>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="demo-landing-page" class="section-light">
+    <section id="demo-landing-page" class="section-dark">
       <div class="container">
         <div class="section-header reveal">
           <div class="eyebrow">Demonstração</div>
@@ -1960,18 +2297,19 @@
               <li><i class="fa-solid fa-check"></i><span>Design responsivo</span></li>
               <li><i class="fa-solid fa-check"></i><span>Foco em geração de leads</span></li>
             </ul>
-            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20landing%20page%20para%20minha%20empresa.">Quero uma landing page</a>
+            <a class="btn btn-primary" data-track="whatsapp_landing" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20landing%20page%20para%20minha%20empresa.">Quero uma landing page</a>
           </div>
 
-          <div class="card reveal" style="padding: 36px;">
-            <h3>Mockup visual</h3>
+          <div class="demo-visual card reveal">
+            <span class="concept-badge">Demonstração conceitual</span>
+            <img src="landing-page-concept.webp" alt="Exemplo visual de landing page criada pela Overclock" loading="lazy" />
             <p>Headline clara, benefícios, prova e WhatsApp integrado em destaque.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="demo-sistema-automacao" class="section-dark">
+    <section id="demo-sistema-automacao" class="section-light">
       <div class="container">
         <div class="section-header reveal">
           <div class="eyebrow">Demonstração</div>
@@ -1989,23 +2327,24 @@
               <li><i class="fa-solid fa-check"></i><span>Alertas</span></li>
               <li><i class="fa-solid fa-check"></i><span>Relatórios</span></li>
             </ul>
-            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20organizar%20minha%20operação%20com%20um%20sistema.">Quero organizar minha operação</a>
+            <a class="btn btn-primary" data-track="whatsapp_system" href="https://wa.me/5512997570377?text=Olá,%20quero%20organizar%20minha%20operação%20com%20um%20sistema.">Quero organizar minha operação</a>
           </div>
 
-          <div class="card reveal" style="padding: 36px;">
-            <h3>Mockup visual</h3>
+          <div class="demo-visual card reveal">
+            <span class="concept-badge">Demonstração conceitual</span>
+            <img src="system-automation-concept.webp" alt="Exemplo visual de sistema e automação desenvolvidos pela Overclock" loading="lazy" />
             <p>Dashboard com clientes, pedidos, tarefas, status e relatórios em destaque.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="confianca" class="section-light">
+    <section id="confianca" class="section-dark">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">Prova</div>
-          <h2>Por que contratar a Overclock?</h2>
-          <p>A escolha certa é a solução que entrega resultado, não apenas análise.</p>
+          <div class="eyebrow">Por que a Overclock</div>
+          <h2>Execução técnica com foco no negócio</h2>
+          <p>Da ideia à entrega: tecnologia clara, útil e preparada para evoluir com sua empresa.</p>
         </div>
 
         <div class="cards-grid">
@@ -2019,7 +2358,7 @@
       </div>
     </section>
 
-    <section id="metodo" class="section-dark">
+    <section id="metodo" class="section-light">
       <div class="container">
         <div class="section-header reveal">
           <div class="eyebrow">Método</div>
@@ -2065,11 +2404,11 @@
           </p>
 
           <div class="cta-actions">
-            <a class="btn btn-primary" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20proposta%20para%20minha%20empresa.">
+            <a class="btn btn-primary" data-track="whatsapp_cta" href="https://wa.me/5512997570377?text=Olá,%20quero%20uma%20proposta%20para%20minha%20empresa.">
               <i class="fa-brands fa-whatsapp"></i>
               Quero uma proposta
             </a>
-            <button class="btn btn-secondary" type="button" onclick="toggleAiChat()">
+            <button class="btn btn-secondary" data-track="over_cta" type="button" onclick="toggleAiChat()">
               <i class="fa-solid fa-robot"></i>
               Falar com a OVER IA
             </button>
@@ -2140,18 +2479,18 @@
     </section>
   </main>
 
-  <div class="ai-chat-tooltip">
-  Olá!
-</div>
-  <button class="ai-chat-button" onclick="toggleAiChat()" aria-label="Abrir assistente virtual OVER">
-    <img src="Over_IA.png" alt="Avatar da OVER" />
+  <div class="ai-chat-tooltip" id="aiChatTooltip">
+    <strong>Olá, eu sou a OVER.</strong><br />Posso ajudar a encontrar a melhor solução.
+  </div>
+  <button class="ai-chat-button" data-track="over_open" onclick="toggleAiChat()" aria-label="Abrir assistente virtual OVER" aria-expanded="false" aria-controls="aiChatWindow">
+    <img src="over-avatar.webp" alt="Avatar da OVER" />
   </button>
 
-  <div class="ai-chat-window" id="aiChatWindow">
+  <div class="ai-chat-window" id="aiChatWindow" role="dialog" aria-label="Assistente virtual OVER">
     <div class="ai-chat-header">
       <div style="display:flex;align-items:center;gap:10px;">
         <div class="ai-chat-avatar">
-          <img src="Over_IA.png" alt="OVER IA" />
+          <img src="over-avatar.webp" alt="OVER IA" />
         </div>
         <div>
           <strong>OVER</strong>
@@ -2171,7 +2510,7 @@
       </div>
     </div> -->
 
-    <div class="ai-chat-messages" id="aiChatMessages">
+    <div class="ai-chat-messages" id="aiChatMessages" aria-live="polite">
       <div class="ai-msg bot">
         Olá, eu sou a OVER. Vou analisar sua operação e apontar onde sua empresa perde eficiência. Descreva o principal problema da sua empresa hoje: planilhas, retrabalho, site, sistema, automação, infraestrutura ou monitoramento.
       </div>
@@ -2189,6 +2528,7 @@
         class="ai-chat-input"
         id="aiChatInput"
         type="text"
+        aria-label="Mensagem para a OVER"
         placeholder="Ex: Minha empresa usa muita planilha..."
         autocomplete="off"
       />
@@ -2198,7 +2538,7 @@
     </form>
   </div>
 
-  <a class="float-whatsapp" href="https://wa.me/5512997570377?text=Olá,%20quero%20falar%20com%20a%20Overclock%20Enterprise." aria-label="Quero uma proposta">
+  <a class="float-whatsapp" data-track="whatsapp_float" href="https://wa.me/5512997570377?text=Olá,%20quero%20falar%20com%20a%20Overclock%20Enterprise." aria-label="Quero uma proposta">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -2206,44 +2546,64 @@
     <div class="container footer-grid">
       <div>
         <div class="brand footer-brand">
-          <svg class="brand-mark" viewBox="0 0 160 160" aria-hidden="true">
-            <circle cx="80" cy="82" r="21" fill="#06B6D4"/>
-            <circle cx="42" cy="122" r="10" fill="#E5E7EB"/>
-            <circle cx="118" cy="122" r="10" fill="#E5E7EB"/>
-            <circle cx="80" cy="30" r="10" fill="#E5E7EB"/>
-            <path d="M80 82L42 122M80 82L118 122M80 82V30" stroke="#E5E7EB" stroke-width="5" stroke-linecap="round"/>
-            <path d="M30 92A54 54 0 0 1 130 92" stroke="#06B6D4" stroke-width="9" fill="none" stroke-linecap="round"/>
-          </svg>
-          OVERCLOCK <span>Enterprise</span>
+          <img class="brand-logo" src="logo-ovr-reverse.svg" alt="Overclock Enterprise" />
         </div>
         <p>Sites, sistemas e automações para empresas que querem vender melhor e operar com menos retrabalho.</p>
       </div>
 
       <div>
         <h3>Navegação</h3>
-        <a href="#propostas">Propostas</a>
-        <a href="#aplicacoes">Aplicações</a>
+        <a href="#propostas">Soluções</a>
+        <a href="#demo-site-institucional">Portfólio</a>
         <a href="#metodo">Como funciona</a>
         <a href="#contato">Contato</a>
       </div>
 
       <div>
         <h3>Serviços</h3>
-        <p>Sistemas web</p>
-        <p>Automação</p>
-        <p>Sistema e automação</p>
+        <p>Sites institucionais</p>
         <p>Landing pages</p>
+        <p>Sistemas e automações</p>
       </div>
 
       <div>
         <h3>Contato</h3>
-        <a href="https://wa.me/5512997570377">WhatsApp: (12) 99757-0377</a>
+        <a data-track="whatsapp_footer" href="https://wa.me/5512997570377">WhatsApp: (12) 99757-0377</a>
         <a href="mailto:overclockboost@gmail.com">overclockboost@gmail.com</a>
       </div>
     </div>
   </footer>
 
   <script>
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function trackEvent(name, parameters = {}) {
+      const event = { event: name, ...parameters };
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(event);
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", name, parameters);
+      }
+
+      if (typeof window.fbq === "function") {
+        const metaEvent = name.startsWith("whatsapp") ? "Contact" : "ViewContent";
+        window.fbq("track", metaEvent, { content_name: name, ...parameters });
+      }
+    }
+
+    document.querySelectorAll("[data-track]").forEach((element) => {
+      element.addEventListener("click", () => {
+        trackEvent(element.dataset.track, {
+          destination: element.getAttribute("href") || "interaction"
+        });
+      });
+    });
+
+    if (prefersReducedMotion) {
+      document.querySelectorAll("video[autoplay]").forEach((video) => video.pause());
+    }
+
     function initNetworkParticles(canvasId, count = 60) {
       const canvas = document.getElementById(canvasId);
       if (!canvas) return;
@@ -2305,16 +2665,22 @@
       draw();
     }
 
-    initNetworkParticles("heroParticles", 72);
-    initNetworkParticles("problemParticles", 52);
+    if (!prefersReducedMotion) {
+      initNetworkParticles("heroParticles", 62);
+      initNetworkParticles("problemParticles", 42);
+    }
 
     function toggleMenu() {
-      document.getElementById("mainNav").classList.toggle("open");
+      const nav = document.getElementById("mainNav");
+      const button = document.getElementById("mobileMenuButton");
+      const isOpen = nav.classList.toggle("open");
+      button.setAttribute("aria-expanded", String(isOpen));
     }
 
     document.querySelectorAll("#mainNav a").forEach((link) => {
       link.addEventListener("click", () => {
         document.getElementById("mainNav").classList.remove("open");
+        document.getElementById("mobileMenuButton").setAttribute("aria-expanded", "false");
       });
     });
 
@@ -2330,15 +2696,21 @@
 
     reveals.forEach((element) => observer.observe(element));
 
+    document.querySelectorAll(".faq-question").forEach((button) => {
+      button.setAttribute("aria-expanded", "false");
+    });
+
     function toggleFaq(button) {
       const answer = button.nextElementSibling;
       const isOpen = button.classList.contains("active");
 
       document.querySelectorAll(".faq-question").forEach((item) => item.classList.remove("active"));
+      document.querySelectorAll(".faq-question").forEach((item) => item.setAttribute("aria-expanded", "false"));
       document.querySelectorAll(".faq-answer").forEach((item) => item.style.maxHeight = null);
 
       if (!isOpen) {
         button.classList.add("active");
+        button.setAttribute("aria-expanded", "true");
         answer.style.maxHeight = answer.scrollHeight + "px";
       }
     }
@@ -2346,8 +2718,10 @@
     function toggleAiChat() {
   const chat = document.getElementById("aiChatWindow");
   const tooltip = document.getElementById("aiChatTooltip");
+  const launcher = document.querySelector(".ai-chat-button");
 
   chat.classList.toggle("open");
+  launcher.setAttribute("aria-expanded", String(chat.classList.contains("open")));
 
   if (chat.classList.contains("open") && tooltip) {
     tooltip.classList.add("hidden");
@@ -2387,14 +2761,14 @@
         const data = await response.json();
 
           loading.classList.remove("typing-indicator");
-          loading.innerHTML =
+          loading.textContent =
             data.answer ||
             data.error ||
           "Não consegui responder agora.";
 
       } catch (error) {
           loading.classList.remove("typing-indicator");
-          loading.innerHTML =
+          loading.textContent =
           "Erro ao conectar com a assistente. Tente novamente em instantes.";
       }
     }
