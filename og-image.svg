@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Overclock Enterprise</title>
+  <desc id="desc">Sites, sistemas e automações para empresas venderem melhor e operarem com menos retrabalho.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#020617"/>
+      <stop offset="1" stop-color="#0B1120"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="18%" r="60%">
+      <stop stop-color="#06B6D4" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" rx="36" fill="url(#bg)"/>
+  <rect width="1200" height="630" rx="36" fill="url(#glow)"/>
+  <rect x="48" y="48" width="1104" height="534" rx="28" fill="none" stroke="#1E293B"/>
+  <g transform="translate(76 70) scale(.42)" fill="#F8FAFC">
+    <circle cx="110" cy="120" r="88" fill="none" stroke="#F8FAFC" stroke-width="42"/>
+    <path d="M183 30h49l55 145 56-145h49l-81 195h-48z"/>
+    <path fill-rule="evenodd" d="M350 30h106c48 0 76 24 76 65 0 32-18 54-49 64l58 66h-57l-51-61h-38v61h-45zm45 42v53h58c21 0 33-9 33-27 0-17-12-26-33-26z"/>
+    <path d="M430 30h54l-18 42h-54z" fill="#06B6D4"/>
+  </g>
+  <text x="326" y="116" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="2">OVERCLOCK</text>
+  <text x="328" y="154" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="8">ENTERPRISE</text>
+  <text x="78" y="330" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" letter-spacing="-2">Tecnologia que vende.</text>
+  <text x="78" y="400" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" letter-spacing="-2">Sistemas que organizam.</text>
+  <text x="80" y="486" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="27">Sites, sistemas e automações para empresas.</text>
+  <rect x="80" y="528" width="184" height="5" rx="2.5" fill="#06B6D4"/>
+</svg>
