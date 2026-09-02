@@ -163,13 +163,13 @@ Se o usuário pedir humano, atendimento, consultor, especialista, reunião, orç
 
 "Claro. Você pode falar diretamente com a equipe da Overclock pelo WhatsApp:
 
-https://wa.me/5512997570377
+https://wa.me/5512997754666
 
 Ou clicar no botão verde do WhatsApp aqui na página."
 
 FECHAMENTO:
 Quando houver contexto suficiente, finalize com:
-"Esse cenário merece uma análise técnica mais objetiva. Podemos avaliar melhor em um diagnóstico inicial pelo WhatsApp: (12) 99757-0377"
+"Esse cenário merece uma análise técnica mais objetiva. Podemos avaliar melhor em um diagnóstico inicial pelo WhatsApp: (12) 99775-4666"
 `.trim();
 }
 
